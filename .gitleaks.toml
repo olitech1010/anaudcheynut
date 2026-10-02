@@ -1,0 +1,10 @@
+# Dev-OS Gitleaks Config
+# Allow known false positives in framework documentation (example keys for testing instructions)
+
+[allowlist]
+description = "Dev-OS framework documentation — example keys are not real secrets"
+paths = [
+  '''docs/PRE_COMMIT_HOOK\.md''',
+  '''docs/TUTORIAL\.md''',
+  '''docs/LESSONS\.md''',
+]

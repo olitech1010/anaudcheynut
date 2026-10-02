@@ -1,0 +1,13 @@
+# Dev-OS temporary backups
+.agents/_backup/
+
+# Runtime telemetry (noise for git)
+.agents/telemetry/
+
+# Environment files (never commit secrets)
+.env
+.env.local
+.env.production
+
+# macOS
+.DS_Store
