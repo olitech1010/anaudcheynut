@@ -225,10 +225,10 @@ Observability and failure analysis specialist. Monitors `.agents/telemetry/event
 
 Quality benchmark and regression prevention engineer inspired by ECC and DeepSeek Harness patterns.
 
-- Maintains capability evals and regression suites
-- Measures pass@k rates on automated workflows
+- Maintains capability evals and regression suites in `.agents/evals/`
+- Measures pass@k rates on automated workflows using `.agents/skills/eval-harness/SKILL.md`
 - Validates cross-harness parity across Claude, Antigravity, Cursor, OpenCode, and Codex
-- Issues formal `EVAL_PASSED` or `EVAL_REGRESSED` verdicts
+- Issues formal `EVAL_PASSED` or `EVAL_REGRESSED` verdicts with actionable scorecards (`devos eval`)
 
 ---
 
@@ -371,6 +371,7 @@ All agents can reference these skills from `skills/`. Each skill is a directory 
 | `autonomous-sdlc/` | Autonomous SDLC modes (interactive, guided, auto, audit) | Executive Proxy, Orchestrator |
 | `telemetry/` | Local failure logging and RCA feedback | Telemetry Agent |
 | `anti-ai-ui/` | Eliminates AI UI clichés and enforces authentic craft | UI Designer, Developer, QA |
+| `eval-harness/` | Benchmark capability evaluations, pass@k metrics, and agent scorecards | Eval Engineer |
 
 ---
 
@@ -398,3 +399,4 @@ All agents can reference these skills from `skills/`. Each skill is a directory 
 20. **Environment & Config Parity Gate.** All environment variables referenced in code (`process.env.*`, `os.environ[...]`, `env(...)`) must be documented in `.env.example` with dummy placeholder values and pass `.agents/scripts/env-check.sh`. Committing live credentials or private keys to `.env.example` or code is strictly forbidden.
 21. **Database & Migration Safety Gate.** All database migrations (`*.sql`) must execute `ALTER TABLE <table> ENABLE ROW LEVEL SECURITY;` on created tables, maintain foreign key indexes, and avoid destructive actions (`DROP TABLE`, `DROP COLUMN`, `TRUNCATE`) without explicit dry-run approval and annotation (`-- devos:approved-destructive`). Migrations must pass `.agents/scripts/db-check.sh`.
 
+22. **Implementation Plan Gate.** The Developer MUST NOT write any production code without an approved implementation plan in `docs/superpowers/plans/` (produced by the `brainstorming` → `writing-plans` workflow). This is enforced as a mechanical gate in `scripts/sdlc-runner.js` Stage 5. If no plan exists, the Developer is blocked and must request the Orchestrator trigger the brainstorming skill first.

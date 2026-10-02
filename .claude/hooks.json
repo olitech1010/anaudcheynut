@@ -1,0 +1,20 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "command": ".agents/hooks/session-start.sh"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "bash",
+        "command": ".agents/hooks/pre-tool-use.sh"
+      }
+    ],
+    "SessionEnd": [
+      {
+        "command": ".agents/hooks/session-end.sh"
+      }
+    ]
+  }
+}

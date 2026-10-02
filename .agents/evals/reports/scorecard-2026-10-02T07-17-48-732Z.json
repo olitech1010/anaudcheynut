@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-10-02T07:17:48.731Z",
+  "verdict": "EVAL_PASSED",
+  "score": 100,
+  "durationMs": 1,
+  "kSampling": 1,
+  "totalCases": 5,
+  "passedCases": 5,
+  "failedCases": 0,
+  "criticalFailures": 0,
+  "passAtK": {
+    "k1": 1,
+    "k3": 1,
+    "k5": 1
+  },
+  "suites": {
+    "memory-preservation": {
+      "name": "Shared Memory Vault & State Preservation",
+      "category": "state",
+      "total": 5,
+      "passed": 5,
+      "failed": 0
+    }
+  },
+  "failures": []
+}

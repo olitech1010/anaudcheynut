@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-10-02T09:56:13.358Z",
+  "verdict": "EVAL_REGRESSED",
+  "score": 80,
+  "durationMs": 1,
+  "kSampling": 1,
+  "totalCases": 5,
+  "passedCases": 4,
+  "failedCases": 1,
+  "criticalFailures": 1,
+  "passAtK": {
+    "k1": 0.8,
+    "k3": 0.992,
+    "k5": 1
+  },
+  "suites": {
+    "memory-preservation": {
+      "name": "Shared Memory Vault & State Preservation",
+      "category": "state",
+      "total": 5,
+      "passed": 4,
+      "failed": 1
+    }
+  },
+  "failures": [
+    {
+      "suite": "memory-preservation",
+      "caseId": "memory-current-state-sync",
+      "name": "docs/CURRENT_STATE.md remains the single source of truth for active task and team roster",
+      "critical": true,
+      "detail": "docs/CURRENT_STATE.md missing active task or Eval Engineer allocation"
+    }
+  ]
+}
