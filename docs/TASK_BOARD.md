@@ -21,25 +21,21 @@
 ## Active Board
 
 ### [ HUMAN_CHECKPOINT ]
-- **`TASK-003`**: Design Gate — root `DESIGN.md` authored from `arnaud-cheynut/specs/design-system.md` tokens + Dev-OS v4.3.0 design catalog
-  - **Assignee:** UI Designer
-  - **DependsOn:** TASK-002
-  - **Triage Level:** STANDARD
-  - **ParallelGate:** [QA: pass (ui-taste-check clean), Tester: N/A, Security: N/A]
-  - **HumanCheckpoint:** pending
-  - **Artifacts:** `DESIGN.md` (root), Dev-OS v4.3.0 catalog sync, ADR-006
-
-### [ QUEUED ]
-- **`TASK-004`**: Database Schema & Seeds — Supabase schema, RLS policies, seed fixtures
+- **`TASK-004`**: Database Schema, Seeds & Env Setup — 6 Supabase tables with RLS, FK indexes, seed data fixtures, and `.env.example` / `.env.local` parity
   - **Assignee:** DBA
   - **DependsOn:** TASK-003
   - **Triage Level:** CRITICAL
+  - **ParallelGate:** [DB: pass (db-check.sh), Env: pass (env-check.sh), QA: pass, Tester: N/A, Security: pass (RLS enabled)]
+  - **HumanCheckpoint:** pending
+  - **Artifacts:** `supabase/migrations/20261002000000_init_lawfirm_schema.sql`, `supabase/seed.sql`, `.env.example`, `src/lib/supabase/*`, ADR-007
 
-### [ BACKLOG ]
+### [ QUEUED ]
 - **`TASK-005`**: Implementation Sprint 1 — core pages (Home, Expertise, About, Contact), layout, navigation
   - **Assignee:** Developer
   - **DependsOn:** TASK-004
   - **Triage Level:** STANDARD
+
+### [ BACKLOG ]
 - **`TASK-006`**: Implementation Sprint 2 — blog/updates, fees, legal pages (mentions légales, RGPD), i18n FR/EN locale routes
   - **Assignee:** Developer
   - **DependsOn:** TASK-005
@@ -64,6 +60,9 @@
 - **`TASK-002`**: Project Inception — PRD v3 delivered
   - **HumanCheckpoint:** approved (f106ca1)
   - **Artifacts:** `docs/PROJECT_REQUIREMENTS.md`, ADR-005
+- **`TASK-003`**: Design Gate — root `DESIGN.md` authored and verified
+  - **HumanCheckpoint:** approved (a0bb61b)
+  - **Artifacts:** `DESIGN.md`, ADR-006
 
 ---
 
