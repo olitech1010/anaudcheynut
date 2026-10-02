@@ -20,37 +20,22 @@
 
 ## Active Board
 
-### [ IN_PROGRESS ] → [ DONE ]
-- **`TASK-001`**: Orchestrator Mount & Project Initialization — reset stale framework state, initialize memory vault, log ADR-001 (stack reconciliation), declare team roster
-  - **Assignee:** Orchestrator
-  - **DependsOn:** None
-  - **Triage Level:** STANDARD
-  - **ParallelGate:** [QA: N/A, Tester: N/A, Security: N/A]
-  - **HumanCheckpoint:** approved (Human directed stack + inception)
-  - **Artifacts:** ADR-001, ADR-002, reset TASK_BOARD/CURRENT_STATE/context.json
-
 ### [ HUMAN_CHECKPOINT ]
-- **`TASK-002`**: Project Inception — consolidate `arnaud-cheynut/` research package into `docs/PROJECT_REQUIREMENTS.md` (PRD)
-  - **Assignee:** Architect (skills: brainstorming + project-requirements; grill-me not installed)
-  - **DependsOn:** TASK-001
-  - **Triage Level:** STANDARD
-  - **ParallelGate:** [Humanizer: pass (v3 clean), QA: N/A (docs task), Tester: N/A, Security: N/A]
-  - **HumanCheckpoint:** pending — OQ 1, 6, 7 answered; 6 Architect recommendations logged pending Human confirmation (ADR-005)
-  - **Artifacts:** `docs/PROJECT_REQUIREMENTS.md` (v3, ~245 lines, humanizer clean), `ADR-005` (domain, languages, intake)
-
-### [ QUEUED ]
-- **`TASK-003`**: Design Gate — author root `DESIGN.md` from `ui-ux-pro-max` archetypes + tokens from `arnaud-cheynut/specs/design-system.md`
-  - **Assignee:** UI Designer (skill: `ui-ux-pro-max`)
+- **`TASK-003`**: Design Gate — root `DESIGN.md` authored from `arnaud-cheynut/specs/design-system.md` tokens + Dev-OS v4.3.0 design catalog
+  - **Assignee:** UI Designer
   - **DependsOn:** TASK-002
   - **Triage Level:** STANDARD
-  - **ParallelGate:** [QA: pending, Tester: N/A, Security: N/A]
+  - **ParallelGate:** [QA: pass (ui-taste-check clean), Tester: N/A, Security: N/A]
   - **HumanCheckpoint:** pending
+  - **Artifacts:** `DESIGN.md` (root), Dev-OS v4.3.0 catalog sync, ADR-006
 
-### [ BACKLOG ]
-- **`TASK-004`**: Architecture & Schema — Next.js 15 scaffold, Supabase schema, seed fixtures (password `devos123`)
+### [ QUEUED ]
+- **`TASK-004`**: Database Schema & Seeds — Supabase schema, RLS policies, seed fixtures
   - **Assignee:** DBA
   - **DependsOn:** TASK-003
   - **Triage Level:** CRITICAL
+
+### [ BACKLOG ]
 - **`TASK-005`**: Implementation Sprint 1 — core pages (Home, Expertise, About, Contact), layout, navigation
   - **Assignee:** Developer
   - **DependsOn:** TASK-004
@@ -73,7 +58,12 @@
   - **Triage Level:** STANDARD
 
 ### [ DONE ]
-- *(No tasks completed yet)*
+- **`TASK-001`**: Orchestrator Mount & Project Initialization
+  - **HumanCheckpoint:** approved
+  - **Artifacts:** ADR-001, ADR-002
+- **`TASK-002`**: Project Inception — PRD v3 delivered
+  - **HumanCheckpoint:** approved (f106ca1)
+  - **Artifacts:** `docs/PROJECT_REQUIREMENTS.md`, ADR-005
 
 ---
 
