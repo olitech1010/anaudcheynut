@@ -22,7 +22,13 @@ export function Footer() {
           {/* Column 1: Identity & Bar Accreditation */}
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-stone-100">
-              <Image src="/images/logo.png" alt="Cabinet Arnaud Cheynut" width={150} height={50} className="brightness-0 invert" />
+              <Image
+                src="/images/logo-horizontal-white.png"
+                alt="Cabinet Me Arnaud Cheynut - Avocat-Défenseur Monaco"
+                width={220}
+                height={46}
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-xs uppercase tracking-wider text-gold-400 font-semibold mt-4">
               Avocat-Défenseur près la Cour d&apos;Appel de Monaco

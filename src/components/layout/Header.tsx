@@ -26,8 +26,15 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Brand Identity */}
-          <Link href="/" className="flex flex-col group py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-md">
-            <Image src="/images/logo.png" alt="Cabinet Arnaud Cheynut" width={180} height={60} />
+          <Link href="/" className="flex items-center group py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-md">
+            <Image
+              src="/images/logo-horizontal.png"
+              alt="Cabinet Me Arnaud Cheynut - Avocat-Défenseur Monaco"
+              width={240}
+              height={48}
+              className="h-10 sm:h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
