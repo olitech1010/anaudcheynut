@@ -1,4 +1,5 @@
 {
+  "$schema": "https://opencode.ai/config.json",
   "name": "Dev-OS",
   "version": "4.3.0",
   "rules": [
