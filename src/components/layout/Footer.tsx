@@ -125,8 +125,8 @@ export function Footer() {
             <Link href="/politique-confidentialite" className="hover:text-stone-300 transition-colors">
               Politique de Confidentialité (RGPD)
             </Link>
-            <Link href="/contact" className="hover:text-stone-300 transition-colors">
-              Plan d&apos;Accès
+            <Link href="/plan-du-site" className="hover:text-stone-300 transition-colors">
+              Plan du Site
             </Link>
           </div>
         </div>

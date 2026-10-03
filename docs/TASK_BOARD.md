@@ -21,19 +21,13 @@
 ## Active Board
 
 ### [ HUMAN_CHECKPOINT ]
-- **`TASK-005`**: Implementation Sprint 1: Core Pages & Site Foundation — RootLayout, Header, Footer, EmergencyBanner, Home, Expertise (index + 7 dynamic SSG detail pages), About, Contact with Zod Server Action and Supabase integration
-  - **Assignee:** Developer
-  - **DependsOn:** TASK-004
-  - **Triage Level:** STANDARD
-  - **ParallelGate:** [Build: pass (14 static pages), QA: pass (ui-taste-check clean), Tester: N/A, Security: pass (honeypot + validation)]
-  - **HumanCheckpoint:** pending
-  - **Artifacts:** `src/app/*`, `src/components/*`, `src/lib/data/practice-areas.ts`, `docs/superpowers/plans/2026-10-02-sprint-1-core-pages.md`, ADR-008
-
-### [ QUEUED ]
-- **`TASK-006`**: Implementation Sprint 2 — blog/updates, fees, legal pages (mentions légales, RGPD), i18n FR/EN locale routes
+- **`TASK-006`**: Implementation Sprint 2: Blog, Fees & Legal Pages — Blog index + 4 SSG article pages, Fee transparency (3 billing models), Mentions Légales, RGPD Privacy Policy, HTML Sitemap, Header/Footer nav updates
   - **Assignee:** Developer
   - **DependsOn:** TASK-005
   - **Triage Level:** STANDARD
+  - **ParallelGate:** [Build: pass (26 static pages), QA: pass (ui-taste-check clean, env-check clean), Tester: N/A, Security: N/A]
+  - **HumanCheckpoint:** pending
+  - **Artifacts:** `src/app/actualites/*`, `src/app/honoraires/*`, `src/app/mentions-legales/*`, `src/app/politique-confidentialite/*`, `src/app/plan-du-site/*`, `src/lib/data/articles.ts`, `src/components/blog/*`, Header.tsx, Footer.tsx, `docs/superpowers/plans/2026-10-03-sprint-2-content-legal.md`, ADR-009
 
 ### [ BACKLOG ]
 - **`TASK-007`**: Test Suite & Testing Guide — unit/integration tests, `docs/TESTING_GUIDE.md` (devos123)
@@ -62,6 +56,9 @@
 - **`TASK-004`**: Database Schema, Seeds & Env Setup — Supabase schema, RLS policies, seeds, and client/server utilities
   - **HumanCheckpoint:** approved (421cc51)
   - **Artifacts:** `supabase/migrations/*`, `supabase/seed.sql`, `.env.example`, `src/lib/supabase/*`, ADR-007
+- **`TASK-005`**: Implementation Sprint 1: Core Pages & Site Foundation — RootLayout, Header, Footer, Home, Expertise (index + 7 SSG detail pages), About, Contact with Server Action
+  - **HumanCheckpoint:** approved (ef88804)
+  - **Artifacts:** `src/app/*`, `src/components/*`, `src/lib/data/practice-areas.ts`, ADR-008
 
 ---
 

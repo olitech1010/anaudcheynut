@@ -12,6 +12,8 @@ export function Header() {
     { name: "Accueil", href: "/" },
     { name: "Domaines d'Expertise", href: "/expertise" },
     { name: "Le Cabinet", href: "/a-propos" },
+    { name: "Honoraires", href: "/honoraires" },
+    { name: "Actualités", href: "/actualites" },
     { name: "Contact", href: "/contact" },
   ];
 
