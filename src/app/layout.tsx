@@ -4,6 +4,8 @@ import "./globals.css";
 import { EmergencyBanner } from "@/components/layout/EmergencyBanner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ChatWidget } from "@/components/chat/ChatWidget";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Me Arnaud Cheynut" }],
   creator: "Cabinet Me Arnaud Cheynut",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://arnaud-cheynut.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://anaudcheynut.com"),
   openGraph: {
     title: "Me Arnaud Cheynut | Avocat-Défenseur à la Cour d'Appel de Monaco",
     description:
@@ -51,6 +53,8 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <ChatWidget />
+        <Analytics />
       </body>
     </html>
   );

@@ -10,8 +10,8 @@
 
 ## Project
 **Law Firm Website — Me Arnaud Cheynut** (Avocat-Défenseur, Ordre des Avocats de Monaco)
-- Client contact: contact@zabaldano.com | +377 97 98 06 80 | 9 rue du Gabian Phase III, 98000 Monaco
-- Domain: arnaud-cheynut.com
+- Client contact: contact@anaudcheynut.com | +377 97 98 06 80 | 9 rue du Gabian Phase III, 98000 Monaco
+- Domain: anaudcheynut.com
 - Launch languages: FR (default) + EN (geo-detected, cookie-persisted)
 - Intake: email + phone only (no Calendly/self-service booking)
 - Complete research package: `arnaud-cheynut/` (profile, content strategy, technical spec, design system, competitor analysis, assets)
@@ -33,7 +33,7 @@
 - **ADR-002**: Stack locked — Next.js 15 + Supabase + Vercel (Human decision).
 - **ADR-003**: Email automation — transactional notifications for every user-initiated process; Resend default, SMTP swap-in.
 - **ADR-004**: AI assistant — dual-mode (voice + chat), Gemini Live + OpenRouter fallback, assistant-not-adviser guardrails.
-- **ADR-005 (October 2, 2026)**: Domain (arnaud-cheynut.com), languages (FR + EN at launch with geo-detect toggle, IT Phase 2), intake (email/phone only), plus Architect-recommended defaults for remaining open questions.
+- **ADR-005 (October 2, 2026)**: Domain (arnaudcheynut.com), languages (FR + EN at launch with geo-detect toggle, IT Phase 2), intake (email/phone only), plus Architect-recommended defaults for remaining open questions.
 - **ADR-006 (October 2, 2026)**: Design System baseline — Dev-OS v4.3.0 catalog synchronization and root `DESIGN.md` establishing Monaco Navy (#0B1D3A), Monaco Gold (#C8A850), Fraunces display serif, and WCAG AA compliance.
 - **ADR-007 (October 2, 2026)**: Database Architecture — 6 core tables with mandatory RLS, foreign key indexing, server/client `@supabase/ssr` utilities, and `.env.example` parity.
 - **ADR-008 (October 3, 2026)**: Sprint 1 Core Pages Architecture — 14 static pages prerendered via SSG, 5-step visual procedural timelines on all practice areas, honeypot spam protection, and Server Action direct DB integration.

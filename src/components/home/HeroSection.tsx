@@ -41,10 +41,10 @@ export function HeroSection() {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   }, []);
 
-  // Auto-advance every 6 seconds
+  // Auto-advance every 3.8 seconds for dynamic, brisk pacing
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(next, 6000);
+    const timer = setInterval(next, 3800);
     return () => clearInterval(timer);
   }, [isPaused, next]);
 
@@ -60,7 +60,7 @@ export function HeroSection() {
       {slides.map((slide, i) => (
         <div
           key={slide.src}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
             i === current ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
           role="group"
@@ -93,7 +93,7 @@ export function HeroSection() {
             {slides.map((slide, i) => (
               <div
                 key={`text-${i}`}
-                className={`transition-all duration-700 ease-in-out ${
+                className={`transition-all duration-500 ease-in-out ${
                   i === current
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4 absolute inset-0"

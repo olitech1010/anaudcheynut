@@ -42,10 +42,10 @@ export default function PolitiqueConfidentialitePage() {
               <p>
                 E-mail :{" "}
                 <Link
-                  href="mailto:contact@zabaldano.com"
+                  href="mailto:contact@anaudcheynut.com"
                   className="text-navy-900 hover:text-gold-600 transition-colors"
                 >
-                  contact@zabaldano.com
+                  contact@anaudcheynut.com
                 </Link>
               </p>
               <p>
@@ -261,10 +261,10 @@ export default function PolitiqueConfidentialitePage() {
               <p>
                 Pour exercer vos droits, adressez votre demande à{" "}
                 <Link
-                  href="mailto:contact@zabaldano.com"
+                  href="mailto:contact@anaudcheynut.com"
                   className="text-navy-900 hover:text-gold-600 transition-colors"
                 >
-                  contact@zabaldano.com
+                  contact@anaudcheynut.com
                 </Link>{" "}
                 accompagnée d&apos;un justificatif d&apos;identité.
               </p>

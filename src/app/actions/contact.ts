@@ -2,6 +2,7 @@
 
 import { contactSchema, type ContactFormData } from "@/lib/validation/contact-schema";
 import { createClient } from "@/lib/supabase/server";
+import { sendContactEmails } from "@/lib/email/send";
 
 export interface ContactActionResult {
   success: boolean;
@@ -63,6 +64,16 @@ export async function submitContactAction(
       console.error("[ContactAction] Database insert error:", dbError.message);
       // Even if database has not had migrations applied yet, return graceful fallback confirmation
     }
+
+    // Email notifications (failures are caught internally — DB row is the source of truth, ADR-003)
+    await sendContactEmails({
+      fullName: validData.fullName,
+      email: validData.email,
+      phone: validData.phone,
+      practiceAreaSlug: validData.practiceAreaSlug,
+      message: validData.message,
+      isUrgent: validData.isUrgent,
+    });
 
     return {
       success: true,

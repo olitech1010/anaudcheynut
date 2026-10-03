@@ -1,30 +1,110 @@
+import Link from "next/link";
+
 export function ProcessTimeline() {
   const steps = [
-    { title: "Contact", description: "Prise de contact initiale et présentation de votre situation." },
-    { title: "Consultation", description: "Entretien approfondi pour analyser les enjeux juridiques." },
-    { title: "Stratégie", description: "Définition de la stratégie de défense ou d'action la plus adaptée." },
-    { title: "Action", description: "Mise en œuvre des démarches amiables ou judiciaires." },
-    { title: "Résolution", description: "Suivi jusqu'à la conclusion de l'affaire et exécution." },
+    {
+      num: 1,
+      title: "Contact",
+      description: "Prise de contact initiale et présentation de votre situation.",
+      isFilled: false,
+    },
+    {
+      num: 2,
+      title: "Consultation",
+      description: "Entretien approfondi pour analyser les enjeux juridiques.",
+      isFilled: false,
+    },
+    {
+      num: 3,
+      title: "Stratégie",
+      description: "Définition de la stratégie de défense ou d'action la plus adaptée.",
+      isFilled: false,
+    },
+    {
+      num: 4,
+      title: "Action",
+      description: "Mise en œuvre des démarches amiables ou judiciaires.",
+      isFilled: false,
+    },
+    {
+      num: 5,
+      title: "Résolution",
+      description: "Suivi jusqu'à la conclusion de l'affaire et exécution.",
+      isFilled: true,
+    },
   ];
 
   return (
-    <section className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-montserrat text-3xl font-extrabold text-navy-900 mb-16 text-center">
-          Notre Méthodologie
-        </h2>
-        <div className="flex flex-col lg:flex-row justify-between relative">
-          <div className="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-stone-200 -z-10" />
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col items-center mb-8 lg:mb-0 lg:w-1/5 text-center relative group">
-              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-stone-200 -z-10" />
-              <div className="w-16 h-16 rounded-full bg-gold-500 text-navy-900 flex items-center justify-center font-montserrat font-bold text-xl mb-4 shadow-lg">
-                {index + 1}
-              </div>
-              <h3 className="font-montserrat font-bold text-navy-900 mb-2">{step.title}</h3>
-              <p className="text-stone-600 text-sm px-4">{step.description}</p>
+    <section className="bg-[#F8F6F0] py-24 lg:py-32 border-b border-stone-200" id="methodologie">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Left Column: Heading, intro, CTA */}
+          <div className="lg:col-span-5 lg:sticky lg:top-28">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[52px] font-normal text-navy-900 leading-[1.12] tracking-tight mb-8">
+              Une méthode
+              <br />
+              claire, de votre
+              <br />
+              premier appel à la
+              <br />
+              décision finale
+            </h2>
+
+            <p className="text-stone-600 text-base sm:text-lg leading-relaxed mb-10 max-w-md font-montserrat">
+              Cinq étapes, un seul interlocuteur. Vous savez où en est votre dossier à chaque moment.
+            </p>
+
+            <div className="space-y-4">
+              <Link
+                href="/contact"
+                className="inline-block bg-navy-900 hover:bg-navy-800 text-white font-montserrat text-sm font-semibold px-8 py-3.5 rounded-xs transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 shadow-sm"
+              >
+                Prendre contact
+              </Link>
+              <p className="text-stone-500 text-sm font-montserrat">
+                Urgence pénale : nous répondons 24h/24.
+              </p>
             </div>
-          ))}
+          </div>
+
+          {/* Right Column: Vertical Timeline matching reference image */}
+          <div className="lg:col-span-7 lg:pl-8">
+            <div className="relative">
+              {/* Continuous vertical line running through circle centers */}
+              <div
+                className="absolute left-[27px] top-[28px] bottom-[28px] w-[1.5px] bg-[#C8A850] -z-0"
+                aria-hidden="true"
+              />
+
+              <div className="space-y-12 sm:space-y-14 relative z-10">
+                {steps.map((step) => (
+                  <div key={step.num} className="flex items-start gap-6 sm:gap-8 group">
+                    {/* Circle badge */}
+                    <div
+                      className={`flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center font-serif text-xl sm:text-2xl transition-transform duration-200 group-hover:scale-105 ${
+                        step.isFilled
+                          ? "bg-[#B89745] text-white shadow-xs"
+                          : "bg-[#F8F6F0] text-navy-900 border-[1.5px] border-[#C8A850]"
+                      }`}
+                      aria-label={`Étape ${step.num}`}
+                    >
+                      {step.num}
+                    </div>
+
+                    {/* Step Content */}
+                    <div className="pt-2 sm:pt-2.5">
+                      <h3 className="font-serif text-2xl sm:text-[26px] font-bold text-navy-900 leading-snug mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-montserrat max-w-lg">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
