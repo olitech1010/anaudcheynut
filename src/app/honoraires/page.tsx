@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/layout/PageHeader";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -64,29 +65,11 @@ export default function HonorairesPage() {
   return (
     <div className="bg-stone-50">
       {/* Header */}
-      <section className="bg-navy-900 text-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <Handshake
-              className="w-6 h-6 text-gold-500"
-              aria-hidden="true"
-            />
-            <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold">
-              Transparence
-            </span>
-          </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Honoraires et Facturation
-          </h1>
-          <p className="text-sm sm:text-base text-stone-300 max-w-2xl leading-relaxed">
-            Le Cabinet de Me&nbsp;Arnaud Cheynut s&apos;engage à une
-            transparence totale sur ses modalités de facturation.
-            Chaque mandat fait l&apos;objet d&apos;une convention
-            d&apos;honoraires écrite signée préalablement à toute
-            intervention.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Honoraires"
+        backgroundImage="/images/headers/honoraires.jpg"
+        breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Honoraires", href: "#" }]}
+      />
 
       {/* Convention d'honoraires explanation */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -99,7 +82,7 @@ export default function HonorairesPage() {
               />
             </div>
             <div>
-              <h2 className="font-serif text-xl sm:text-2xl font-bold text-navy-900 mb-3">
+              <h2 className="font-montserrat font-bold text-xl sm:text-2xl font-bold text-navy-900 mb-3">
                 Convention d&apos;Honoraires Préalable
               </h2>
               <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-4">
@@ -147,7 +130,7 @@ export default function HonorairesPage() {
         </div>
 
         {/* Billing Models Grid */}
-        <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mb-10">
+        <h2 className="font-montserrat font-bold text-2xl sm:text-3xl font-bold text-navy-900 mb-10">
           Modes de Facturation
         </h2>
 
@@ -165,7 +148,7 @@ export default function HonorairesPage() {
                     aria-hidden="true"
                   />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-navy-900 mb-1">
+                <h3 className="font-montserrat font-bold text-lg font-bold text-navy-900 mb-1">
                   {model.title}
                 </h3>
                 <p className="text-xs text-stone-400 uppercase tracking-wider font-semibold mb-4">
@@ -192,7 +175,7 @@ export default function HonorairesPage() {
 
         {/* Droit Pénal / Urgences note */}
         <div className="mt-12 bg-navy-900/5 border border-navy-900/10 rounded-xl p-6 sm:p-8">
-          <h3 className="font-serif text-lg font-bold text-navy-900 mb-3">
+          <h3 className="font-montserrat font-bold text-lg font-bold text-navy-900 mb-3">
             Urgences Pénales et Garde à Vue
           </h3>
           <p className="text-sm text-stone-600 leading-relaxed">

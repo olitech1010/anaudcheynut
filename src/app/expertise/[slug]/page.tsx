@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { PageHeader } from "@/components/layout/PageHeader";
 import Link from "next/link";
 import { PRACTICE_AREAS, type PracticeArea } from "@/lib/data/practice-areas";
 import { 
@@ -81,19 +82,11 @@ export default async function PracticeDetailPage({ params }: Props) {
         </nav>
 
         {/* Hero Header */}
-        <header className="bg-navy-900 text-stone-100 rounded-2xl p-8 sm:p-12 border border-navy-800 shadow-lg relative overflow-hidden mb-12">
-          <div className="relative z-10 max-w-3xl">
-            <div className="w-14 h-14 rounded-xl bg-gold-500 text-navy-900 flex items-center justify-center mb-6">
-              <IconComp className="w-8 h-8" />
-            </div>
-            <h1 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-              {practice.title}
-            </h1>
-            <p className="text-base sm:text-lg text-stone-300 mt-4 leading-relaxed font-normal">
-              {practice.summary}
-            </p>
-          </div>
-        </header>
+        <PageHeader
+        title={practice.title}
+        backgroundImage={`/images/headers/${slug}.jpg`}
+        breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Expertise", href: "/expertise" }, { label: practice.title, href: `/expertise/${slug}` }]}
+      />
 
         {/* Two-column Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -101,7 +94,7 @@ export default async function PracticeDetailPage({ params }: Props) {
           <div className="lg:col-span-8 space-y-12">
             {/* Overview Section */}
             <section className="bg-white rounded-xl p-8 border border-stone-200 shadow-xs space-y-4">
-              <h2 className="font-serif text-2xl font-bold text-navy-900">
+              <h2 className="font-montserrat font-bold text-2xl font-bold text-navy-900">
                 Cadre Juridique &amp; Pratique Monégasque
               </h2>
               <p className="text-stone-700 leading-relaxed text-base">
@@ -111,7 +104,7 @@ export default async function PracticeDetailPage({ params }: Props) {
 
             {/* Key Interventions */}
             <section className="bg-white rounded-xl p-8 border border-stone-200 shadow-xs space-y-6">
-              <h2 className="font-serif text-2xl font-bold text-navy-900">
+              <h2 className="font-montserrat font-bold text-2xl font-bold text-navy-900">
                 Périmètre d&apos;Intervention du Cabinet
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -130,7 +123,7 @@ export default async function PracticeDetailPage({ params }: Props) {
                 <span className="text-xs uppercase tracking-widest text-gold-600 font-bold">
                   Étapes Clés
                 </span>
-                <h2 className="font-serif text-2xl font-bold text-navy-900 mt-1">
+                <h2 className="font-montserrat font-bold text-2xl font-bold text-navy-900 mt-1">
                   Déroulement de la Procédure
                 </h2>
                 <p className="text-sm text-stone-600 mt-1">
@@ -141,11 +134,13 @@ export default async function PracticeDetailPage({ params }: Props) {
               <div className="space-y-6">
                 {practice.procedureSteps.map((step) => (
                   <div key={step.step} className="flex gap-4 sm:gap-6 items-start">
-                    <div className="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-serif font-bold text-base flex items-center justify-center flex-shrink-0 shadow-xs">
-                      {step.step}
-                    </div>
+                    <PageHeader
+        title={practice.title}
+        backgroundImage={`/images/headers/${slug}.jpg`}
+        breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Expertise", href: "/expertise" }, { label: practice.title, href: `/expertise/${slug}` }]}
+      />
                     <div className="pt-1 space-y-1">
-                      <h3 className="font-serif text-base sm:text-lg font-bold text-navy-900">
+                      <h3 className="font-montserrat font-bold text-base sm:text-lg font-bold text-navy-900">
                         {step.title}
                       </h3>
                       <p className="text-sm text-stone-600 leading-relaxed">
@@ -161,7 +156,7 @@ export default async function PracticeDetailPage({ params }: Props) {
           {/* Sidebar CTA */}
           <aside className="lg:col-span-4 space-y-6">
             <div className="bg-white rounded-xl p-6 sm:p-8 border border-stone-200 shadow-xs sticky top-28 space-y-6">
-              <h3 className="font-serif text-xl font-bold text-navy-900">
+              <h3 className="font-montserrat font-bold text-xl font-bold text-navy-900">
                 Consulter sur ce dossier
               </h3>
               <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">

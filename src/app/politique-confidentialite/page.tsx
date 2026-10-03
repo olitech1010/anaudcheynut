@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/layout/PageHeader";
 import Link from "next/link";
 import { Lock, FileText } from "lucide-react";
 
@@ -13,35 +14,18 @@ export default function PolitiqueConfidentialitePage() {
   return (
     <div className="bg-stone-50">
       {/* Header */}
-      <section className="bg-navy-900 text-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <Lock
-              className="w-6 h-6 text-gold-500"
-              aria-hidden="true"
-            />
-            <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold">
-              RGPD &amp; CCIN
-            </span>
-          </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Politique de Confidentialité
-          </h1>
-          <p className="text-sm sm:text-base text-stone-300 max-w-2xl leading-relaxed">
-            Protection de vos données personnelles conformément au
-            Règlement Général sur la Protection des Données (RGPD) et à
-            la Loi monégasque n° 1.165 du 23 décembre 1993 relative à la
-            protection des informations nominatives.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Politique de Confidentialité"
+        backgroundImage="/images/headers/default.jpg"
+        breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Politique de Confidentialité", href: "#" }]}
+      />
 
       {/* Content */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="space-y-10 text-sm sm:text-base text-stone-600 leading-relaxed">
           {/* Responsable */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               1. Responsable du Traitement
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-2">
@@ -78,7 +62,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* Données Collectées */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               2. Données Personnelles Collectées
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-4">
@@ -120,7 +104,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* Finalités */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               3. Finalités du Traitement
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-4">
@@ -163,7 +147,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* Base Juridique */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               4. Base Juridique du Traitement
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8">
@@ -182,7 +166,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* Durée de Conservation */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               5. Durée de Conservation
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-3">
@@ -202,7 +186,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* Droits */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               6. Droits des Personnes Concernées
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-4">
@@ -289,7 +273,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* Cookies */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               7. Cookies
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-3">
@@ -307,7 +291,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* Sécurité */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               8. Sécurité des Données
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8">
@@ -323,7 +307,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* CCIN */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               9. Autorité de Contrôle
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-3">
@@ -356,7 +340,7 @@ export default function PolitiqueConfidentialitePage() {
 
           {/* Mise à jour */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               10. Modification de la Politique
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8">

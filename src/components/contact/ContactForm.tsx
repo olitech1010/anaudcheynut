@@ -19,7 +19,7 @@ export function ContactForm() {
         <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
           <CheckCircle2 className="w-6 h-6" />
         </div>
-        <h3 className="font-serif text-xl font-bold text-emerald-900">
+        <h3 className="font-montserrat font-bold text-xl font-bold text-emerald-900">
           Demande Transmise avec Succès
         </h3>
         <p className="text-sm text-emerald-800 leading-relaxed max-w-md mx-auto">

@@ -44,61 +44,59 @@ colors:
 
 typography:
   display-hero:
-    fontFamily: "'Fraunces', 'Georgia', serif"
+    fontFamily: "'Montserrat', sans-serif"
     fontSize: "clamp(2.5rem, 5vw + 1rem, 4.5rem)" # 72px desktop
-    fontWeight: 700
+    fontWeight: 800
     lineHeight: 1.1
-    letterSpacing: "-0.025em"
-  display-section:
-    fontFamily: "'Fraunces', 'Georgia', serif"
-    fontSize: "clamp(2rem, 3.5vw + 0.5rem, 3rem)" # 48px desktop
-    fontWeight: 600
-    lineHeight: 1.15
     letterSpacing: "-0.02em"
-  display-card:
-    fontFamily: "'Fraunces', 'Georgia', serif"
-    fontSize: "clamp(1.5rem, 2vw + 0.5rem, 2rem)" # 32px desktop
-    fontWeight: 600
-    lineHeight: 1.25
+  display-section:
+    fontFamily: "'Montserrat', sans-serif"
+    fontSize: "clamp(2rem, 3.5vw + 0.5rem, 3rem)" # 48px desktop
+    fontWeight: 700
+    lineHeight: 1.15
     letterSpacing: "-0.015em"
-  heading-xl:
-    fontFamily: "'Fraunces', 'Georgia', serif"
-    fontSize: "1.5rem" # 24px
-    fontWeight: 600
-    lineHeight: 1.3
+  display-card:
+    fontFamily: "'Montserrat', sans-serif"
+    fontSize: "clamp(1.5rem, 2vw + 0.5rem, 2rem)" # 32px desktop
+    fontWeight: 700
+    lineHeight: 1.25
     letterSpacing: "-0.01em"
+  heading-xl:
+    fontFamily: "'Montserrat', sans-serif"
+    fontSize: "1.5rem" # 24px
+    fontWeight: 700
+    lineHeight: 1.3
   heading-lg:
-    fontFamily: "'Inter', system-ui, -apple-system, sans-serif"
+    fontFamily: "'Montserrat', sans-serif"
     fontSize: "1.25rem" # 20px
     fontWeight: 600
     lineHeight: 1.35
-    letterSpacing: "-0.01em"
   heading-md:
-    fontFamily: "'Inter', system-ui, -apple-system, sans-serif"
+    fontFamily: "'Montserrat', sans-serif"
     fontSize: "1.125rem" # 18px
     fontWeight: 600
     lineHeight: 1.4
   body-lead:
-    fontFamily: "'Inter', system-ui, -apple-system, sans-serif"
+    fontFamily: "'Montserrat', sans-serif"
     fontSize: "1.125rem" # 18px
     fontWeight: 400
     lineHeight: 1.7
   body-default:
-    fontFamily: "'Inter', system-ui, -apple-system, sans-serif"
+    fontFamily: "'Montserrat', sans-serif"
     fontSize: "1rem" # 16px
     fontWeight: 400
     lineHeight: 1.7
   body-sm:
-    fontFamily: "'Inter', system-ui, -apple-system, sans-serif"
+    fontFamily: "'Montserrat', sans-serif"
     fontSize: "0.875rem" # 14px
     fontWeight: 400
     lineHeight: 1.6
   caption:
-    fontFamily: "'Inter', system-ui, -apple-system, sans-serif"
+    fontFamily: "'Montserrat', sans-serif"
     fontSize: "0.75rem" # 12px
     fontWeight: 500
     lineHeight: 1.5
-    letterSpacing: "0.02em"
+    letterSpacing: "0.05em"
   code-mono:
     fontFamily: "'JetBrains Mono', 'Fira Code', monospace"
     fontSize: "0.875rem"

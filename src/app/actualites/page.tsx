@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { BookOpen } from "lucide-react";
 import { ARTICLES } from "@/lib/data/articles";
 import { CategoryFilter } from "@/components/blog/CategoryFilter";
@@ -19,27 +20,11 @@ export default function ActualitesPage() {
   return (
     <div className="bg-stone-50">
       {/* Page Header */}
-      <section className="bg-navy-900 text-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <BookOpen
-              className="w-6 h-6 text-gold-500"
-              aria-hidden="true"
-            />
-            <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold">
-              Veille Juridique
-            </span>
-          </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Actualités et Analyses
-          </h1>
-          <p className="text-sm sm:text-base text-stone-300 max-w-2xl leading-relaxed">
-            Points de droit, évolutions législatives et analyses
-            jurisprudentielles en droit monégasque, publiés par le Cabinet
-            de Me&nbsp;Arnaud Cheynut.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Actualités"
+        backgroundImage="/images/headers/blog.jpg"
+        breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Actualités", href: "#" }]}
+      />
 
       {/* Articles Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/layout/PageHeader";
 import Link from "next/link";
 import { Map, Scale, BookOpen, FileText, ArrowRight } from "lucide-react";
 import { PRACTICE_AREAS } from "@/lib/data/practice-areas";
@@ -28,22 +29,11 @@ export default function PlanDuSitePage() {
   return (
     <div className="bg-stone-50">
       {/* Header */}
-      <section className="bg-navy-900 text-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <Map
-              className="w-6 h-6 text-gold-500"
-              aria-hidden="true"
-            />
-            <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold">
-              Navigation
-            </span>
-          </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
-            Plan du Site
-          </h1>
-        </div>
-      </section>
+      <PageHeader
+        title="Plan du Site"
+        backgroundImage="/images/headers/default.jpg"
+        breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Plan du Site", href: "#" }]}
+      />
 
       {/* Content */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -53,7 +43,7 @@ export default function PlanDuSitePage() {
             const Icon = section.icon;
             return (
               <div key={section.title}>
-                <h2 className="font-serif text-lg font-bold text-navy-900 mb-4 flex items-center gap-2 border-b border-stone-200 pb-2">
+                <h2 className="font-montserrat font-bold text-lg font-bold text-navy-900 mb-4 flex items-center gap-2 border-b border-stone-200 pb-2">
                   <Icon
                     className="w-5 h-5 text-gold-500"
                     aria-hidden="true"
@@ -79,7 +69,7 @@ export default function PlanDuSitePage() {
 
           {/* Practice Areas */}
           <div>
-            <h2 className="font-serif text-lg font-bold text-navy-900 mb-4 flex items-center gap-2 border-b border-stone-200 pb-2">
+            <h2 className="font-montserrat font-bold text-lg font-bold text-navy-900 mb-4 flex items-center gap-2 border-b border-stone-200 pb-2">
               <Scale
                 className="w-5 h-5 text-gold-500"
                 aria-hidden="true"
@@ -103,7 +93,7 @@ export default function PlanDuSitePage() {
 
           {/* Blog Articles */}
           <div>
-            <h2 className="font-serif text-lg font-bold text-navy-900 mb-4 flex items-center gap-2 border-b border-stone-200 pb-2">
+            <h2 className="font-montserrat font-bold text-lg font-bold text-navy-900 mb-4 flex items-center gap-2 border-b border-stone-200 pb-2">
               <BookOpen
                 className="w-5 h-5 text-gold-500"
                 aria-hidden="true"
@@ -136,7 +126,7 @@ export default function PlanDuSitePage() {
 
           {/* Legal Pages */}
           <div>
-            <h2 className="font-serif text-lg font-bold text-navy-900 mb-4 flex items-center gap-2 border-b border-stone-200 pb-2">
+            <h2 className="font-montserrat font-bold text-lg font-bold text-navy-900 mb-4 flex items-center gap-2 border-b border-stone-200 pb-2">
               <FileText
                 className="w-5 h-5 text-gold-500"
                 aria-hidden="true"

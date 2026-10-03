@@ -32,7 +32,7 @@ export function ArticleCard({ article }: Props) {
           </div>
         </div>
 
-        <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-900 leading-snug group-hover:text-navy-700 transition-colors">
+        <h3 className="font-montserrat font-bold text-lg sm:text-xl font-bold text-navy-900 leading-snug group-hover:text-navy-700 transition-colors">
           <Link href={`/actualites/${article.slug}`} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded">
             {article.title}
           </Link>

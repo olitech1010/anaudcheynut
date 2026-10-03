@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { EmergencyBanner } from "@/components/layout/EmergencyBanner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -50,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${fraunces.variable}`}>
-      <body className="font-sans antialiased bg-stone-50 text-stone-700 min-h-screen flex flex-col selection:bg-gold-500 selection:text-navy-900">
+    <html lang="fr" className={`${montserrat.variable}`}>
+      <body className="font-montserrat antialiased bg-stone-50 text-stone-700 min-h-screen flex flex-col selection:bg-gold-500 selection:text-navy-900">
         <EmergencyBanner />
         <Header />
         <main className="flex-grow">{children}</main>

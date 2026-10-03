@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, ShieldCheck, Scale } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Mail, ShieldCheck } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -21,12 +22,9 @@ export function Footer() {
           {/* Column 1: Identity & Bar Accreditation */}
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-stone-100">
-              <Scale className="w-6 h-6 text-gold-500" aria-hidden="true" />
-              <span className="font-serif text-xl font-bold tracking-tight">
-                Me Arnaud Cheynut
-              </span>
+              <Image src="/images/logo.png" alt="Cabinet Arnaud Cheynut" width={150} height={50} className="brightness-0 invert" />
             </div>
-            <p className="text-xs uppercase tracking-wider text-gold-400 font-semibold">
+            <p className="text-xs uppercase tracking-wider text-gold-400 font-semibold mt-4">
               Avocat-Défenseur près la Cour d&apos;Appel de Monaco
             </p>
             <p className="text-sm text-stone-400 leading-relaxed">
@@ -40,7 +38,7 @@ export function Footer() {
 
           {/* Column 2: Domaines d'Expertise */}
           <div className="space-y-4">
-            <h3 className="font-serif text-base font-semibold text-stone-100 border-b border-navy-700 pb-2">
+            <h3 className="font-montserrat font-bold text-base font-semibold text-stone-100 border-b border-navy-700 pb-2">
               Domaines d&apos;Expertise
             </h3>
             <ul className="space-y-2.5 text-sm">
@@ -59,7 +57,7 @@ export function Footer() {
 
           {/* Column 3: Contact & Coordonnées */}
           <div className="space-y-4">
-            <h3 className="font-serif text-base font-semibold text-stone-100 border-b border-navy-700 pb-2">
+            <h3 className="font-montserrat font-bold text-base font-semibold text-stone-100 border-b border-navy-700 pb-2">
               Cabinet à Monaco
             </h3>
             <div className="space-y-3 text-sm text-stone-400">
@@ -98,7 +96,7 @@ export function Footer() {
 
           {/* Column 4: Déontologie & Informations Légales */}
           <div className="space-y-4">
-            <h3 className="font-serif text-base font-semibold text-stone-100 border-b border-navy-700 pb-2">
+            <h3 className="font-montserrat font-bold text-base font-semibold text-stone-100 border-b border-navy-700 pb-2">
               Ordre &amp; Déontologie
             </h3>
             <p className="text-xs text-stone-400 leading-relaxed">

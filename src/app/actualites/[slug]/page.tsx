@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/layout/PageHeader";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -91,7 +92,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
               {article.categoryName}
             </span>
 
-            <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-900 leading-tight mb-6">
+            <h1 className="font-montserrat font-bold text-2xl sm:text-3xl lg:text-4xl font-bold text-navy-900 leading-tight mb-6">
               {article.title}
             </h1>
 
@@ -117,7 +118,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
             </p>
 
             {/* Body */}
-            <div className="prose prose-stone prose-headings:font-serif prose-headings:text-navy-900 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-li:leading-relaxed prose-strong:text-navy-900 max-w-none whitespace-pre-line text-sm sm:text-base">
+            <div className="prose prose-stone prose-headings:font-montserrat font-bold prose-headings:text-navy-900 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:leading-relaxed prose-li:leading-relaxed prose-strong:text-navy-900 max-w-none whitespace-pre-line text-sm sm:text-base">
               {article.content.trim()}
             </div>
 
@@ -129,7 +130,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                 </p>
                 <Link
                   href={`/expertise/${relatedPractice.slug}`}
-                  className="inline-flex items-center gap-2 font-serif text-lg font-bold text-navy-900 hover:text-gold-600 transition-colors group"
+                  className="inline-flex items-center gap-2 font-montserrat font-bold text-lg font-bold text-navy-900 hover:text-gold-600 transition-colors group"
                 >
                   <Scale
                     className="w-5 h-5 text-gold-500"
@@ -160,26 +161,15 @@ export default async function ArticleDetailPage({ params }: PageProps) {
           <aside className="lg:col-span-1">
             <div className="sticky top-28 space-y-8">
               {/* CTA Box */}
-              <div className="bg-navy-900 text-stone-100 rounded-xl p-6 sm:p-8 shadow-sm">
-                <h2 className="font-serif text-lg font-bold mb-3">
-                  Besoin d&apos;un Avocat-Défenseur ?
-                </h2>
-                <p className="text-sm text-stone-300 leading-relaxed mb-6">
-                  Me Arnaud Cheynut se tient à votre disposition pour une
-                  consultation confidentielle relative à votre situation
-                  juridique en Principauté de Monaco.
-                </p>
-                <Link
-                  href="/contact"
-                  className="block text-center bg-gold-500 hover:bg-gold-400 text-navy-900 font-semibold text-sm px-5 py-3 rounded-md transition-colors shadow-sm"
-                >
-                  Prendre Rendez-vous
-                </Link>
-              </div>
+              <PageHeader
+        title={article.title}
+        backgroundImage="/images/headers/blog.jpg"
+        breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Actualités", href: "/actualites" }, { label: article.title, href: `/actualites/${slug}` }]}
+      />
 
               {/* Other articles */}
               <div>
-                <h3 className="font-serif text-base font-semibold text-navy-900 mb-4 border-b border-stone-200 pb-2">
+                <h3 className="font-montserrat font-bold text-base font-semibold text-navy-900 mb-4 border-b border-stone-200 pb-2">
                   Autres Analyses
                 </h3>
                 <ul className="space-y-3">

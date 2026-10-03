@@ -1,20 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, ArrowRight, Phone } from "lucide-react";
+import { Menu, X, ArrowRight, Phone, ChevronDown } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileExpertiseOpen, setMobileExpertiseOpen] = useState(false);
 
-  const navigation = [
-    { name: "Accueil", href: "/" },
-    { name: "Domaines d'Expertise", href: "/expertise" },
-    { name: "Le Cabinet", href: "/a-propos" },
-    { name: "Honoraires", href: "/honoraires" },
-    { name: "Actualités", href: "/actualites" },
-    { name: "Contact", href: "/contact" },
+  const expertiseLinks = [
+    { name: "Droit Pénal & Défense", href: "/expertise/droit-penal" },
+    { name: "Droit Civil & Litiges", href: "/expertise/droit-civil" },
+    { name: "Droit Commercial & SAM/SARL", href: "/expertise/droit-commercial" },
+    { name: "Droit de la Famille & Patrimoine", href: "/expertise/droit-famille" },
+    { name: "Référés d'Urgence & Mesures Conservatoires", href: "/expertise/procedures-urgence" },
+    { name: "Arbitrage & Résolution de Conflits", href: "/expertise/arbitrage" },
+    { name: "Droit Immobilier Monégasque", href: "/expertise/droit-immobilier" },
   ];
 
   return (
@@ -22,26 +26,77 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Brand Identity */}
-          <Link href="/" className="flex flex-col group py-1">
-            <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-navy-900 group-hover:text-navy-700 transition-colors">
-              Me Arnaud Cheynut
-            </span>
-            <span className="text-xs uppercase tracking-widest text-stone-500 font-medium">
-              Avocat-Défenseur près la Cour d&apos;Appel de Monaco
-            </span>
+          <Link href="/" className="flex flex-col group py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-md">
+            <Image src="/images/logo.png" alt="Cabinet Arnaud Cheynut" width={180} height={60} />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navigation principale">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium text-stone-700 hover:text-navy-900 transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gold-500 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
+          <nav className="hidden md:flex items-center gap-6" aria-label="Navigation principale">
+            <Link
+              href="/"
+              className="text-sm font-medium uppercase tracking-wider text-stone-700 hover:text-navy-900 transition-colors font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-sm"
+            >
+              Accueil
+            </Link>
+
+            {/* Expertise Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <button
+                type="button"
+                className="flex items-center gap-1 text-sm font-medium uppercase tracking-wider text-stone-700 hover:text-navy-900 transition-colors font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-sm"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                aria-expanded={dropdownOpen}
               >
-                {item.name}
-              </Link>
-            ))}
+                Expertise
+                <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {dropdownOpen && (
+                <div className="absolute top-full left-0 w-72 pt-4">
+                  <div className="bg-white rounded-md shadow-lg border border-stone-200 py-2">
+                    {expertiseLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="block px-4 py-2.5 text-sm text-stone-700 hover:bg-stone-50 hover:text-navy-900 border-l-2 border-transparent hover:border-gold-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+                        onClick={() => setDropdownOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/a-propos"
+              className="text-sm font-medium uppercase tracking-wider text-stone-700 hover:text-navy-900 transition-colors font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-sm"
+            >
+              Le Cabinet
+            </Link>
+            <Link
+              href="/honoraires"
+              className="text-sm font-medium uppercase tracking-wider text-stone-700 hover:text-navy-900 transition-colors font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-sm"
+            >
+              Honoraires
+            </Link>
+            <Link
+              href="/actualites"
+              className="text-sm font-medium uppercase tracking-wider text-stone-700 hover:text-navy-900 transition-colors font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-sm"
+            >
+              Actualités
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm font-medium uppercase tracking-wider text-stone-700 hover:text-navy-900 transition-colors font-montserrat focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-sm"
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Actions: Phone + Language + CTA */}
@@ -50,7 +105,7 @@ export function Header() {
 
             <Link
               href="tel:+37797980680"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-700 hover:text-navy-900 px-3 py-2 rounded-md hover:bg-stone-200/50 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-700 hover:text-navy-900 px-3 py-2 rounded-md hover:bg-stone-200/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
             >
               <Phone className="w-3.5 h-3.5 text-gold-500" aria-hidden="true" />
               <span>+377 97 98 06 80</span>
@@ -58,7 +113,7 @@ export function Header() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-stone-50 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded-md shadow-sm active:scale-[0.98] transition-all"
+              className="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-stone-50 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded-md shadow-sm active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
             >
               <span>Prendre Rendez-vous</span>
               <ArrowRight className="w-3.5 h-3.5 text-gold-400" aria-hidden="true" />
@@ -87,23 +142,75 @@ export function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-stone-200 bg-stone-50 px-4 pt-2 pb-6 space-y-3">
+        <div className="md:hidden border-b border-stone-200 bg-stone-50 px-4 pt-2 pb-6 space-y-3 font-montserrat">
           <nav className="flex flex-col space-y-2">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-base font-medium text-stone-700 hover:bg-stone-100 rounded-md transition-colors"
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-base font-medium uppercase tracking-wider text-stone-700 hover:bg-stone-100 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+            >
+              Accueil
+            </Link>
+            
+            <div>
+              <button
+                type="button"
+                onClick={() => setMobileExpertiseOpen(!mobileExpertiseOpen)}
+                className="w-full flex items-center justify-between px-3 py-2 text-base font-medium uppercase tracking-wider text-stone-700 hover:bg-stone-100 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
               >
-                {item.name}
-              </Link>
-            ))}
+                Expertise
+                <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpertiseOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {mobileExpertiseOpen && (
+                <div className="pl-6 space-y-1 mt-1">
+                  {expertiseLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 text-sm text-stone-600 hover:text-navy-900 hover:bg-stone-100 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/a-propos"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-base font-medium uppercase tracking-wider text-stone-700 hover:bg-stone-100 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+            >
+              Le Cabinet
+            </Link>
+            <Link
+              href="/honoraires"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-base font-medium uppercase tracking-wider text-stone-700 hover:bg-stone-100 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+            >
+              Honoraires
+            </Link>
+            <Link
+              href="/actualites"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-base font-medium uppercase tracking-wider text-stone-700 hover:bg-stone-100 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+            >
+              Actualités
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 text-base font-medium uppercase tracking-wider text-stone-700 hover:bg-stone-100 rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+            >
+              Contact
+            </Link>
           </nav>
           <div className="pt-4 border-t border-stone-200 flex flex-col gap-3">
             <Link
               href="tel:+37797980680"
-              className="flex items-center justify-center gap-2 text-sm font-semibold text-navy-900 py-2.5 rounded-md border border-stone-300"
+              className="flex items-center justify-center gap-2 text-sm font-semibold text-navy-900 py-2.5 rounded-md border border-stone-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
             >
               <Phone className="w-4 h-4 text-gold-500" />
               <span>Appeler le Cabinet : +377 97 98 06 80</span>
@@ -111,7 +218,7 @@ export function Header() {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 bg-navy-900 text-stone-50 font-semibold text-sm py-3 rounded-md shadow-sm"
+              className="flex items-center justify-center gap-2 bg-navy-900 text-stone-50 font-semibold text-sm py-3 rounded-md shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
             >
               <span>Prendre Rendez-vous</span>
               <ArrowRight className="w-4 h-4 text-gold-400" />

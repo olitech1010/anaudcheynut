@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHeader } from "@/components/layout/PageHeader";
 import Link from "next/link";
 import { Scale, FileText, ShieldCheck } from "lucide-react";
 
@@ -12,29 +13,18 @@ export default function MentionsLegalesPage() {
   return (
     <div className="bg-stone-50">
       {/* Header */}
-      <section className="bg-navy-900 text-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <FileText
-              className="w-6 h-6 text-gold-500"
-              aria-hidden="true"
-            />
-            <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold">
-              Informations Obligatoires
-            </span>
-          </div>
-          <h1 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
-            Mentions Légales
-          </h1>
-        </div>
-      </section>
+      <PageHeader
+        title="Mentions Légales"
+        backgroundImage="/images/headers/default.jpg"
+        breadcrumbs={[{ label: "Accueil", href: "/" }, { label: "Mentions Légales", href: "#" }]}
+      />
 
       {/* Content */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="space-y-12 text-sm sm:text-base text-stone-600 leading-relaxed">
           {/* Éditeur */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
               <Scale
                 className="w-5 h-5 text-gold-500"
                 aria-hidden="true"
@@ -83,7 +73,7 @@ export default function MentionsLegalesPage() {
 
           {/* Réglementation Professionnelle */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4 flex items-center gap-2">
               <ShieldCheck
                 className="w-5 h-5 text-gold-500"
                 aria-hidden="true"
@@ -126,7 +116,7 @@ export default function MentionsLegalesPage() {
 
           {/* Assurance RCP */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               Responsabilité Civile Professionnelle
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-3">
@@ -143,7 +133,7 @@ export default function MentionsLegalesPage() {
 
           {/* Conformité LCB-FT */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               Conformité LCB-FT
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-3">
@@ -166,7 +156,7 @@ export default function MentionsLegalesPage() {
 
           {/* Hébergement */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               Hébergement du Site
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8 space-y-3">
@@ -194,7 +184,7 @@ export default function MentionsLegalesPage() {
 
           {/* Propriété Intellectuelle */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               Propriété Intellectuelle
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8">
@@ -211,7 +201,7 @@ export default function MentionsLegalesPage() {
 
           {/* Disclaimer */}
           <div>
-            <h2 className="font-serif text-xl font-bold text-navy-900 mb-4">
+            <h2 className="font-montserrat font-bold text-xl font-bold text-navy-900 mb-4">
               Limitation de Responsabilité
             </h2>
             <div className="bg-white rounded-xl border border-stone-200 p-6 sm:p-8">

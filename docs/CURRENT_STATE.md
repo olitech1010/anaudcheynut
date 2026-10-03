@@ -3,10 +3,10 @@
 > This file is maintained by the Orchestrator agent. It is updated at each phase transition to preserve context across long sessions.
 
 ## Current Task
-- **Task:** TASK-006 — Implementation Sprint 2: Blog, Fees & Legal Pages → HUMAN CHECKPOINT
+- **Task:** TASK-006b — UI Overhaul: Professional Sections, Logo, Montserrat Font, Header Images & Nav Dropdown → HUMAN CHECKPOINT
 - **Branch:** main
 - **Triage Level:** STANDARD
-- **Status:** Completed Implementation Sprint 2. Delivered Blog index page (`/actualites`), 4 SSG article detail pages (`/actualites/[slug]`), Fee transparency page (`/honoraires`) with 3 billing models, Mentions Légales page (`/mentions-legales`) with Monaco Loi n° 1.047 and SICCFIN/AMSF compliance, CCIN/RGPD Privacy Policy page (`/politique-confidentialite`), and HTML Sitemap (`/plan-du-site`). Updated Header navigation (added Honoraires + Actualités links) and Footer (Plan du Site link). Production build verified (26 static pages), 0 TypeScript errors, all Dev-OS scanners passed (ui-taste-check, env-check).
+- **Status:** Completed UI Overhaul based on user guidance and Justica design inspiration. Swapped font system across the application to Montserrat (400, 500, 600, 700, 800). Generated and integrated official AC monogram law firm logo. Deployed real client photo assets (portraits, speaking conferences, office reception/lounge, award rankings) and photorealistic header imagery across all routes. Redesigned desktop header with an uncluttered dropdown for Domaines d'Expertise, collapsible mobile accordion, and unified top actions. Redesigned homepage away from repetitive cards into high-prestige editorial sections (Full-viewport Hero with office backdrop, Awards Bar, Split About, Alternating practice area spotlights, Dark navy Stats Counter, Process Timeline, and full-width CTA Banner). All sub-pages equipped with unified PageHeader hero banners. TypeScript check and production build verified cleanly (23 static routes). All Dev-OS quality gates passed.
 
 ## Project
 **Law Firm Website — Me Arnaud Cheynut** (Avocat-Défenseur, Ordre des Avocats de Monaco)
@@ -19,10 +19,10 @@
 ## Active Agents
 | Agent | Status | Current Assignment |
 |---|---|---|
-| Orchestrator | ACTIVE | TASK-006 HUMAN CHECKPOINT — Sprint 2 delivered, awaiting review |
-| Developer | ACTIVE | TASK-006 complete — 26 pages total, blog, fees, legal, sitemap delivered |
+| Orchestrator | ACTIVE | TASK-006b HUMAN CHECKPOINT — UI Overhaul delivered, awaiting review |
+| Developer | ACTIVE | TASK-006b complete — Montserrat, new navbar, logo, sections, headers delivered |
 | DBA | IDLE | TASK-004 complete — schema migration, RLS policies, seeds delivered |
-| UI Designer | IDLE | TASK-003 complete — root DESIGN.md delivered |
+| UI Designer | IDLE | DESIGN.md updated to Montserrat and section design system |
 | Architect | IDLE | TASK-002 complete — PRD v3 + ADR-005 delivered |
 | Tester | QUEUED | TASK-007 — test suite + docs/TESTING_GUIDE.md |
 | Security | BACKLOG | TASK-008 — OWASP/RGPD audit |
@@ -38,9 +38,10 @@
 - **ADR-007 (October 2, 2026)**: Database Architecture — 6 core tables with mandatory RLS, foreign key indexing, server/client `@supabase/ssr` utilities, and `.env.example` parity.
 - **ADR-008 (October 3, 2026)**: Sprint 1 Core Pages Architecture — 14 static pages prerendered via SSG, 5-step visual procedural timelines on all practice areas, honeypot spam protection, and Server Action direct DB integration.
 - **ADR-009 (October 3, 2026)**: Sprint 2 Content & Legal — Blog system with client-side CategoryFilter, 3-model fee transparency page, Monaco-specific legal compliance (Loi n° 1.047, AMSF/SICCFIN LCB-FT, CCIN/RGPD privacy), HTML sitemap for SEO.
+- **ADR-010 (October 3, 2026)**: UI Overhaul & Craft Realignment — Migrated typography to Montserrat across entire application, added geometric AC monogram logo, un-crowded navbar with Expertise dropdown, replaced card grids with alternating rows and split sections (Justica inspiration), deployed authentic client photos and hero headers.
 
 ## Blockers
 - None. Ready for human review and commit.
 
 ## Context Summary
-TASK-006 complete. Implementation plan approved (`docs/superpowers/plans/2026-10-03-sprint-2-content-legal.md`). 26 pages compiled and verified via `next build`. Next phase: TASK-007 Test Suite & Testing Guide, TASK-008 Security Audit.
+TASK-006b complete. Implementation plan approved (`docs/superpowers/plans/2026-10-03-sprint-3-ui-overhaul.md`). 23 routes compiled cleanly via `next build` and `tsc --noEmit`. Next phase: TASK-007 Test Suite & Testing Guide, TASK-008 Security Audit.
