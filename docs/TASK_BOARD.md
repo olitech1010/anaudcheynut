@@ -21,25 +21,21 @@
 ## Active Board
 
 ### [ HUMAN_CHECKPOINT ]
-- **`TASK-004`**: Database Schema, Seeds & Env Setup — 6 Supabase tables with RLS, FK indexes, seed data fixtures, and `.env.example` / `.env.local` parity
-  - **Assignee:** DBA
-  - **DependsOn:** TASK-003
-  - **Triage Level:** CRITICAL
-  - **ParallelGate:** [DB: pass (db-check.sh), Env: pass (env-check.sh), QA: pass, Tester: N/A, Security: pass (RLS enabled)]
-  - **HumanCheckpoint:** pending
-  - **Artifacts:** `supabase/migrations/20261002000000_init_lawfirm_schema.sql`, `supabase/seed.sql`, `.env.example`, `src/lib/supabase/*`, ADR-007
-
-### [ QUEUED ]
-- **`TASK-005`**: Implementation Sprint 1 — core pages (Home, Expertise, About, Contact), layout, navigation
+- **`TASK-005`**: Implementation Sprint 1: Core Pages & Site Foundation — RootLayout, Header, Footer, EmergencyBanner, Home, Expertise (index + 7 dynamic SSG detail pages), About, Contact with Zod Server Action and Supabase integration
   - **Assignee:** Developer
   - **DependsOn:** TASK-004
   - **Triage Level:** STANDARD
+  - **ParallelGate:** [Build: pass (14 static pages), QA: pass (ui-taste-check clean), Tester: N/A, Security: pass (honeypot + validation)]
+  - **HumanCheckpoint:** pending
+  - **Artifacts:** `src/app/*`, `src/components/*`, `src/lib/data/practice-areas.ts`, `docs/superpowers/plans/2026-10-02-sprint-1-core-pages.md`, ADR-008
 
-### [ BACKLOG ]
+### [ QUEUED ]
 - **`TASK-006`**: Implementation Sprint 2 — blog/updates, fees, legal pages (mentions légales, RGPD), i18n FR/EN locale routes
   - **Assignee:** Developer
   - **DependsOn:** TASK-005
   - **Triage Level:** STANDARD
+
+### [ BACKLOG ]
 - **`TASK-007`**: Test Suite & Testing Guide — unit/integration tests, `docs/TESTING_GUIDE.md` (devos123)
   - **Assignee:** Tester
   - **DependsOn:** TASK-006
@@ -63,6 +59,9 @@
 - **`TASK-003`**: Design Gate — root `DESIGN.md` authored and verified
   - **HumanCheckpoint:** approved (a0bb61b)
   - **Artifacts:** `DESIGN.md`, ADR-006
+- **`TASK-004`**: Database Schema, Seeds & Env Setup — Supabase schema, RLS policies, seeds, and client/server utilities
+  - **HumanCheckpoint:** approved (421cc51)
+  - **Artifacts:** `supabase/migrations/*`, `supabase/seed.sql`, `.env.example`, `src/lib/supabase/*`, ADR-007
 
 ---
 
