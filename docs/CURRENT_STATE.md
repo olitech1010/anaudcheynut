@@ -3,10 +3,10 @@
 > This file is maintained by the Orchestrator agent. It is updated at each phase transition to preserve context across long sessions.
 
 ## Current Task
-- **Task:** Hostinger SMTP Migration, HTML Email Signatures & Domain/Phone Consolidation
+- **Task:** Email Logo Integration, Direct-to-Email Intake & SMTP Testing
 - **Branch:** main
 - **Triage Level:** STANDARD
-- **Status:** Migrated transactional email transport from Resend to Hostinger SMTP (smtp.hostinger.com:465 SSL / 587 TLS) using nodemailer. Created professional HTML email signatures for info@arnaudcheynut.com, contact@arnaudcheynut.com, and arnaud@arnaudcheynut.com in docs/email-signatures/. Embedded official signature into client intake confirmation emails. Configured environment variables in .env.example and .env.local. Replaced phone number across all files with +33 5 75 28 23 81 and locked domain to arnaudcheynut.com.
+- **Status:** Integrated official live website logo into HTML email signatures (info, contact, arnaud) and transactional client receipts and lawyer alerts. Streamlined appointment and contact submissions in src/app/actions/contact.ts so they route directly to email without requiring an external database. Tested Hostinger SMTP (smtp.hostinger.com:465/587) and IMAP (imap.hostinger.com:993). TypeScript and UI taste checks pass 100%.
 
 ## Project
 **Law Firm Website — Me Arnaud Cheynut** (Avocat-Défenseur, Ordre des Avocats de Monaco)

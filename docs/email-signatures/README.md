@@ -24,9 +24,11 @@ This directory contains HTML email signatures for the mailboxes at `arnaudcheynu
 
 | Mailbox | File | Description |
 |---|---|---|
-| `info@arnaudcheynut.com` | `signature-info.html` | General inquiries signature |
-| `contact@arnaudcheynut.com` | `signature-contact.html` | Client intake & form confirmations signature |
-| `arnaud@arnaudcheynut.com` | `signature-arnaud.html` | Direct lawyer correspondence signature |
+| `info@arnaudcheynut.com` | `signature-info.html` | General inquiries signature with website logo |
+| `contact@arnaudcheynut.com` | `signature-contact.html` | Client intake & form confirmations signature with website logo |
+| `arnaud@arnaudcheynut.com` | `signature-arnaud.html` | Direct lawyer correspondence signature with website logo |
+
+All signatures embed the official website brand mark hosted live at `https://www.arnaudcheynut.com`.
 
 ---
 

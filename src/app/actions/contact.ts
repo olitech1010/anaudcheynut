@@ -46,26 +46,8 @@ export async function submitContactAction(
     };
   }
 
-  // 3. Persist into Supabase
+  // 3. Email notifications (Primary delivery mechanism: direct to lawyer's inbox)
   try {
-    const supabase = await createClient();
-    const { error: dbError } = await supabase.from("contact_submissions").insert({
-      full_name: validData.fullName,
-      email: validData.email,
-      phone: validData.phone || null,
-      practice_area_slug: validData.practiceAreaSlug || null,
-      message: validData.message,
-      is_urgent: validData.isUrgent,
-      rgpd_consent: validData.rgpdConsent,
-      status: "new",
-    });
-
-    if (dbError) {
-      console.error("[ContactAction] Database insert error:", dbError.message);
-      // Even if database has not had migrations applied yet, return graceful fallback confirmation
-    }
-
-    // Email notifications (failures are caught internally — DB row is the source of truth, ADR-003)
     await sendContactEmails({
       fullName: validData.fullName,
       email: validData.email,
@@ -74,18 +56,34 @@ export async function submitContactAction(
       message: validData.message,
       isUrgent: validData.isUrgent,
     });
-
-    return {
-      success: true,
-      message:
-        "Votre demande a été enregistrée avec succès. Me Arnaud Cheynut ou son secrétariat reviendra vers vous sous 24h ouvrées.",
-    };
-  } catch (err: unknown) {
-    console.error("[ContactAction] Unexpected error:", err);
-    return {
-      success: true,
-      message:
-        "Votre message a été transmis. Pour toute urgence immédiate, veuillez contacter le Cabinet par téléphone au +33 5 75 28 23 81.",
-    };
+  } catch (emailErr) {
+    console.error("[ContactAction] Email notification dispatch error:", emailErr);
   }
+
+  // 4. Optional Supabase persistence (non-blocking fallback; website does not require DB)
+  try {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    if (supabaseUrl && !supabaseUrl.includes("your-project-id")) {
+      const supabase = await createClient();
+      await supabase.from("contact_submissions").insert({
+        full_name: validData.fullName,
+        email: validData.email,
+        phone: validData.phone || null,
+        practice_area_slug: validData.practiceAreaSlug || null,
+        message: validData.message,
+        is_urgent: validData.isUrgent,
+        rgpd_consent: validData.rgpdConsent,
+        status: "new",
+      });
+    }
+  } catch (dbErr) {
+    // Non-blocking: emails already handled
+    console.warn("[ContactAction] Optional database logging skipped:", dbErr);
+  }
+
+  return {
+    success: true,
+    message:
+      "Votre demande a été enregistrée avec succès. Me Arnaud Cheynut ou son secrétariat reviendra vers vous sous 24h ouvrées.",
+  };
 }
