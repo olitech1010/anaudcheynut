@@ -3,15 +3,15 @@
 > This file is maintained by the Orchestrator agent. It is updated at each phase transition to preserve context across long sessions.
 
 ## Current Task
-- **Task:** TASK-011 — AI Assistant: Chat + Voice (Web Speech API) + Human-like Behavior → HUMAN CHECKPOINT
+- **Task:** Hostinger SMTP Migration, HTML Email Signatures & Domain/Phone Consolidation
 - **Branch:** main
 - **Triage Level:** STANDARD
-- **Status:** Implemented text chat via OpenRouter (Gemini 2.5 Flash) with streaming responses. Added voice chat using browser Web Speech API (SpeechRecognition + SpeechSynthesis) — no external WebSocket server required. Updated system prompt for natural, human-like assistant behavior: refuses legal advice with required disclaimer, proactively offers appointment booking when users mention legal issues. TypeScript check and production build verified cleanly.
+- **Status:** Migrated transactional email transport from Resend to Hostinger SMTP (smtp.hostinger.com:465 SSL / 587 TLS) using nodemailer. Created professional HTML email signatures for info@arnaudcheynut.com, contact@arnaudcheynut.com, and arnaud@arnaudcheynut.com in docs/email-signatures/. Embedded official signature into client intake confirmation emails. Configured environment variables in .env.example and .env.local. Replaced phone number across all files with +33 5 75 28 23 81 and locked domain to arnaudcheynut.com.
 
 ## Project
 **Law Firm Website — Me Arnaud Cheynut** (Avocat-Défenseur, Ordre des Avocats de Monaco)
-- Client contact: contact@anaudcheynut.com | +377 97 98 06 80 | 9 rue du Gabian Phase III, 98000 Monaco
-- Domain: anaudcheynut.com
+- Client contact: contact@arnaudcheynut.com | +33 5 75 28 23 81 | 9 rue du Gabian Phase III, 98000 Monaco
+- Domain: arnaudcheynut.com
 - Launch languages: FR (default) + EN (geo-detected, cookie-persisted)
 - Intake: email + phone only (no Calendly/self-service booking)
 - Complete research package: `arnaud-cheynut/` (profile, content strategy, technical spec, design system, competitor analysis, assets)
@@ -39,6 +39,7 @@
 - **ADR-008 (October 3, 2026)**: Sprint 1 Core Pages Architecture — 14 static pages prerendered via SSG, 5-step visual procedural timelines on all practice areas, honeypot spam protection, and Server Action direct DB integration.
 - **ADR-009 (October 3, 2026)**: Sprint 2 Content & Legal — Blog system with client-side CategoryFilter, 3-model fee transparency page, Monaco-specific legal compliance (Loi n° 1.047, AMSF/SICCFIN LCB-FT, CCIN/RGPD privacy), HTML sitemap for SEO.
 - **ADR-010 (October 3, 2026)**: UI Overhaul & Craft Realignment — Migrated typography to Montserrat across entire application, added geometric AC monogram logo, un-crowded navbar with Expertise dropdown, replaced card grids with alternating rows and split sections (Justica inspiration), deployed authentic client photos and hero headers.
+- **ADR-011 (October 4, 2026)**: Hostinger SMTP Email System & HTML Signatures — Migrated transactional email delivery to Hostinger SMTP (smtp.hostinger.com:465 SSL) using nodemailer. Created responsive HTML email signatures for info@, contact@, and arnaud@arnaudcheynut.com in docs/email-signatures/. Embedded official signature into client intake confirmation emails. Configured environment variables in .env.example and .env.local. Replaced firm phone number across entire site with +33 5 75 28 23 81 and consolidated domain to arnaudcheynut.com.
 
 ## Blockers
 - None. Ready for human review and commit.

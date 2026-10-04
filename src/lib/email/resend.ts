@@ -1,3 +1,5 @@
-import { Resend } from 'resend';
-
-export const resend = new Resend(process.env.RESEND_API_KEY);
+/**
+ * Deprecated: Re-exporting from ./smtp for backward compatibility.
+ * All email delivery has migrated to Hostinger SMTP via nodemailer (ADR-006).
+ */
+export { createTransporter } from "./smtp";

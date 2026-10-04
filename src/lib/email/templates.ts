@@ -41,10 +41,10 @@ export function buildContactReceiptHtml(data: ContactReceiptData): string {
             Pour toute urgence immédiate, contactez directement le Cabinet :
           </p>
           <p style="margin:0 0 4px;font-size:14px;">
-            <strong>Téléphone :</strong> <a href="tel:+37797980680" style="color:#0B1D3A;">+377 97 98 06 80</a>
+            <strong>Téléphone :</strong> <a href="tel:+33575282381" style="color:#0B1D3A;">+33 5 75 28 23 81</a>
           </p>
           <p style="margin:0;font-size:14px;">
-            <strong>Email :</strong> <a href="mailto:contact@anaudcheynut.com" style="color:#0B1D3A;">contact@anaudcheynut.com</a>
+            <strong>Email :</strong> <a href="mailto:contact@arnaudcheynut.com" style="color:#0B1D3A;">contact@arnaudcheynut.com</a>
           </p>
         </td></tr>
 

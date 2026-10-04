@@ -16,11 +16,11 @@ export function EmergencyBanner() {
         </div>
 
         <Link
-          href="tel:+37797980680"
+          href="tel:+33575282381"
           className="inline-flex items-center gap-1.5 font-semibold text-gold-400 hover:text-gold-300 transition-colors tracking-wide underline-offset-4 hover:underline"
         >
           <PhoneCall className="w-3.5 h-3.5" aria-hidden="true" />
-          <span>Ligne Directe 24/7 : +377 97 98 06 80</span>
+          <span>Ligne Directe 24/7 : +33 5 75 28 23 81</span>
         </Link>
       </div>
     </aside>

@@ -117,10 +117,10 @@ export function HeroSection() {
               Prendre Rendez-vous
             </Link>
             <a
-              href="tel:+37797980680"
+              href="tel:+33575282381"
               className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-white/80 text-white font-semibold rounded hover:bg-white hover:text-navy-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
             >
-              +377 97 98 06 80
+              +33 5 75 28 23 81
             </a>
           </div>
         </div>

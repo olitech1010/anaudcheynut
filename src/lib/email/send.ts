@@ -1,4 +1,4 @@
-import { resend } from "./resend";
+import { createTransporter } from "./smtp";
 import { contactReceiptTemplate } from "./templates/contact-receipt";
 import { contactNotificationTemplate } from "./templates/contact-notification";
 
@@ -13,16 +13,19 @@ interface ContactData {
 
 /**
  * Sends both contact form emails (visitor receipt + lawyer notification).
+ * Uses Hostinger SMTP via nodemailer (ADR-006).
  * Failures are logged but never thrown — the DB row is the source of truth (ADR-003).
  */
 export async function sendContactEmails(data: ContactData): Promise<void> {
-  const fromAddress = process.env.CONTACT_EMAIL_FROM || "cabinet@anaudcheynut.com";
-  const toAddress = process.env.CONTACT_EMAIL_TO || "contact@anaudcheynut.com";
+  const fromAddress = process.env.CONTACT_EMAIL_FROM || "contact@arnaudcheynut.com";
+  const toAddress = process.env.CONTACT_EMAIL_TO || "contact@arnaudcheynut.com";
   const urgentPrefix = data.isUrgent ? "[URGENT] " : "";
+
+  const transporter = createTransporter();
 
   // 1. Receipt to the visitor
   try {
-    await resend.emails.send({
+    await transporter.sendMail({
       from: `Cabinet Me Arnaud Cheynut <${fromAddress}>`,
       to: data.email,
       replyTo: toAddress,
@@ -39,7 +42,7 @@ export async function sendContactEmails(data: ContactData): Promise<void> {
 
   // 2. Notification to the lawyer
   try {
-    await resend.emails.send({
+    await transporter.sendMail({
       from: `Site Web — Cabinet Cheynut <${fromAddress}>`,
       to: toAddress,
       replyTo: data.email,

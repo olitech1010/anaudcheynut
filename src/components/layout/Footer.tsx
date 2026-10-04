@@ -77,19 +77,19 @@ export function Footer() {
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold-500 flex-shrink-0" aria-hidden="true" />
                 <Link
-                  href="tel:+37797980680"
+                  href="tel:+33575282381"
                   className="hover:text-gold-400 transition-colors font-medium text-stone-200"
                 >
-                  +377 97 98 06 80
+                  +33 5 75 28 23 81
                 </Link>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-gold-500 flex-shrink-0" aria-hidden="true" />
                 <Link
-                  href="mailto:contact@anaudcheynut.com"
+                  href="mailto:contact@arnaudcheynut.com"
                   className="hover:text-gold-400 transition-colors text-stone-200"
                 >
-                  contact@anaudcheynut.com
+                  contact@arnaudcheynut.com
                 </Link>
               </div>
               <div className="pt-2 text-xs text-stone-400 border-t border-navy-800">

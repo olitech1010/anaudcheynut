@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 export const metadata = {
   title: "Contact | Me Arnaud Cheynut — Avocat-Défenseur Monaco",
   description:
-    "Contactez le Cabinet de Me Arnaud Cheynut, Avocat-Défenseur à Monaco. 9 rue du Gabian, Fontvieille — +377 97 98 06 80.",
+    "Contactez le Cabinet de Me Arnaud Cheynut, Avocat-Défenseur à Monaco. 9 rue du Gabian, Fontvieille — +33 5 75 28 23 81.",
 };
 
 export default function ContactPage() {
@@ -62,10 +62,10 @@ export default function ContactPage() {
                     Téléphone
                   </p>
                   <a
-                    href="tel:+37797980680"
+                    href="tel:+33575282381"
                     className="text-stone-600 hover:text-navy-900 transition-colors"
                   >
-                    +377 97 98 06 80
+                    +33 5 75 28 23 81
                   </a>
                 </div>
               </div>
@@ -79,10 +79,10 @@ export default function ContactPage() {
                     Email
                   </p>
                   <a
-                    href="mailto:contact@anaudcheynut.com"
+                    href="mailto:contact@arnaudcheynut.com"
                     className="text-stone-600 hover:text-navy-900 transition-colors"
                   >
-                    contact@anaudcheynut.com
+                    contact@arnaudcheynut.com
                   </a>
                 </div>
               </div>

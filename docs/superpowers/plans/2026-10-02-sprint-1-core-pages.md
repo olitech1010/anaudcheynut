@@ -69,7 +69,7 @@ src/
 - Clean brand mark: "Me Arnaud Cheynut — Avocat-Défenseur à la Cour".
 - Nav items: Accueil, Domaines d'Expertise, Le Cabinet, Contact, Honoraires.
 - Action items:
-  - Phone link: `+377 97 98 06 80` (click-to-call)
+  - Phone link: `+33 5 75 28 23 81` (click-to-call)
   - Language toggle pill: `FR` (active) / `EN`
   - Primary button: "Prendre Rendez-vous" (navigates to contact)
 

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Me Arnaud Cheynut" }],
   creator: "Cabinet Me Arnaud Cheynut",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://anaudcheynut.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://arnaudcheynut.com"),
   openGraph: {
     title: "Me Arnaud Cheynut | Avocat-Défenseur à la Cour d'Appel de Monaco",
     description:

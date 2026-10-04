@@ -49,19 +49,19 @@ export default function MentionsLegalesPage() {
               <p>
                 <strong className="text-navy-900">Téléphone :</strong>{" "}
                 <Link
-                  href="tel:+37797980680"
+                  href="tel:+33575282381"
                   className="text-navy-900 hover:text-gold-600 transition-colors"
                 >
-                  +377 97 98 06 80
+                  +33 5 75 28 23 81
                 </Link>
               </p>
               <p>
                 <strong className="text-navy-900">E-mail :</strong>{" "}
                 <Link
-                  href="mailto:contact@anaudcheynut.com"
+                  href="mailto:contact@arnaudcheynut.com"
                   className="text-navy-900 hover:text-gold-600 transition-colors"
                 >
-                  contact@anaudcheynut.com
+                  contact@arnaudcheynut.com
                 </Link>
               </p>
               <p>

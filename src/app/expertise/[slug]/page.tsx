@@ -173,10 +173,10 @@ export default async function PracticeDetailPage({ params }: Props) {
                 </Link>
 
                 <Link
-                  href="tel:+37797980680"
+                  href="tel:+33575282381"
                   className="w-full inline-flex items-center justify-center gap-2 bg-stone-100 hover:bg-stone-200 text-navy-900 font-medium px-4 py-2.5 rounded-md text-xs transition-colors text-center border border-stone-300"
                 >
-                  <span>Appeler : +377 97 98 06 80</span>
+                  <span>Appeler : +33 5 75 28 23 81</span>
                 </Link>
               </div>
 

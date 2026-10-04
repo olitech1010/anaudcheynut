@@ -85,7 +85,7 @@ export async function submitContactAction(
     return {
       success: true,
       message:
-        "Votre message a été transmis. Pour toute urgence immédiate, veuillez contacter le Cabinet par téléphone au +377 97 98 06 80.",
+        "Votre message a été transmis. Pour toute urgence immédiate, veuillez contacter le Cabinet par téléphone au +33 5 75 28 23 81.",
     };
   }
 }
