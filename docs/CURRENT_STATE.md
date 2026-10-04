@@ -3,16 +3,17 @@
 > This file is maintained by the Orchestrator agent. It is updated at each phase transition to preserve context across long sessions.
 
 ## Current Task
-- **Task:** Email Logo Integration, Direct-to-Email Intake & SMTP Testing
+- **Task:** Full Bilingual i18n Support (FR/EN), Contact Email Addition & Tablet/Mobile Responsiveness
 - **Branch:** main
 - **Triage Level:** STANDARD
-- **Status:** Integrated official live website logo into HTML email signatures (info, contact, arnaud) and transactional client receipts and lawyer alerts. Streamlined appointment and contact submissions in src/app/actions/contact.ts so they route directly to email without requiring an external database. Tested Hostinger SMTP (smtp.hostinger.com:465/587) and IMAP (imap.hostinger.com:993). TypeScript and UI taste checks pass 100%.
+- **Status:** Implemented dynamic language switcher and complete bilingual dictionaries (French & English) across Navigation, Hero, About, Practice Areas, Stats, Methodology Timeline, Contact Page, and Footer. Added `arnaud@arnaudcheynut.com` directly beneath `contact@arnaudcheynut.com` on the Contact page and in the Footer. Enhanced tablet (768px-1024px) and mobile responsiveness (Header breakpoint, drawer, Hero typography, touch targets, and image containers). Static prerendering (28/28 routes) and Dev-OS quality gates passed 100%.
 
 ## Project
 **Law Firm Website — Me Arnaud Cheynut** (Avocat-Défenseur, Ordre des Avocats de Monaco)
-- Client contact: contact@arnaudcheynut.com | +33 5 75 28 23 81 | 9 rue du Gabian Phase III, 98000 Monaco
+- Client contact: contact@arnaudcheynut.com / arnaud@arnaudcheynut.com | +33 5 75 28 23 81 | 9 rue du Gabian Phase III, 98000 Monaco
 - Domain: arnaudcheynut.com
-- Launch languages: FR (default) + EN (geo-detected, cookie-persisted)
+- Launch languages: FR (default) + EN (live client toggle, cookie & localStorage persisted)
+
 - Intake: email + phone only (no Calendly/self-service booking)
 - Complete research package: `arnaud-cheynut/` (profile, content strategy, technical spec, design system, competitor analysis, assets)
 
