@@ -3,10 +3,10 @@
 > This file is maintained by the Orchestrator agent. It is updated at each phase transition to preserve context across long sessions.
 
 ## Current Task
-- **Task:** TASK-006b — UI Overhaul: Professional Sections, Logo, Montserrat Font, Header Images & Nav Dropdown → HUMAN CHECKPOINT
+- **Task:** TASK-011 — AI Assistant: Chat + Voice (Web Speech API) + Human-like Behavior → HUMAN CHECKPOINT
 - **Branch:** main
 - **Triage Level:** STANDARD
-- **Status:** Completed UI Overhaul based on user guidance and Justica design inspiration. Swapped font system across the application to Montserrat (400, 500, 600, 700, 800). Generated and integrated official AC monogram law firm logo. Deployed real client photo assets (portraits, speaking conferences, office reception/lounge, award rankings) and photorealistic header imagery across all routes. Redesigned desktop header with an uncluttered dropdown for Domaines d'Expertise, collapsible mobile accordion, and unified top actions. Redesigned homepage away from repetitive cards into high-prestige editorial sections (Full-viewport Hero with office backdrop, Awards Bar, Split About, Alternating practice area spotlights, Dark navy Stats Counter, Process Timeline, and full-width CTA Banner). All sub-pages equipped with unified PageHeader hero banners. TypeScript check and production build verified cleanly (23 static routes). All Dev-OS quality gates passed.
+- **Status:** Implemented text chat via OpenRouter (Gemini 2.5 Flash) with streaming responses. Added voice chat using browser Web Speech API (SpeechRecognition + SpeechSynthesis) — no external WebSocket server required. Updated system prompt for natural, human-like assistant behavior: refuses legal advice with required disclaimer, proactively offers appointment booking when users mention legal issues. TypeScript check and production build verified cleanly.
 
 ## Project
 **Law Firm Website — Me Arnaud Cheynut** (Avocat-Défenseur, Ordre des Avocats de Monaco)
@@ -19,8 +19,8 @@
 ## Active Agents
 | Agent | Status | Current Assignment |
 |---|---|---|
-| Orchestrator | ACTIVE | TASK-006b HUMAN CHECKPOINT — UI Overhaul delivered, awaiting review |
-| Developer | ACTIVE | TASK-006b complete — Montserrat, new navbar, logo, sections, headers delivered |
+| Orchestrator | ACTIVE | TASK-011 HUMAN CHECKPOINT — AI Assistant chat + voice delivered, awaiting review |
+| Developer | ACTIVE | TASK-011 complete — OpenRouter chat API, Web Speech API voice, human-like prompt |
 | DBA | IDLE | TASK-004 complete — schema migration, RLS policies, seeds delivered |
 | UI Designer | IDLE | DESIGN.md updated to Montserrat and section design system |
 | Architect | IDLE | TASK-002 complete — PRD v3 + ADR-005 delivered |
@@ -44,4 +44,4 @@
 - None. Ready for human review and commit.
 
 ## Context Summary
-TASK-006b complete. Implementation plan approved (`docs/superpowers/plans/2026-10-03-sprint-3-ui-overhaul.md`). 23 routes compiled cleanly via `next build` and `tsc --noEmit`. Next phase: TASK-007 Test Suite & Testing Guide, TASK-008 Security Audit.
+TASK-011 complete. AI Assistant with text chat (OpenRouter/Gemini 2.5 Flash streaming), voice chat (Web Speech API — SpeechRecognition + SpeechSynthesis), and human-like behavior (natural refusal of legal advice, proactive appointment booking). 23 routes + /api/chat compiled cleanly via `next build` and `tsc --noEmit`. Next phase: TASK-007 Test Suite & Testing Guide, TASK-008 Security Audit.

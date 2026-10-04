@@ -21,22 +21,22 @@
 ## Active Board
 
 ### [ HUMAN_CHECKPOINT ]
-- **`TASK-006b`**: UI Overhaul: Professional Sections, Logo, Montserrat Font, Header Images & Nav Dropdown — Redesigned navbar with Expertise dropdown, Montserrat font adoption, firm AC monogram logo, Justica-inspired layout sections (Hero, Awards bar, Split About, Alternating practice areas, Stats counter, Process timeline, CTA banner), unified PageHeader banners across all routes.
+- **`TASK-011`**: AI Assistant: Chat + Voice + Human-like Behavior — Text chat via OpenRouter (Gemini 2.5 Flash streaming), voice chat via Web Speech API (SpeechRecognition + SpeechSynthesis, no external server), human-like system prompt (natural legal advice refusal + proactive appointment booking).
   - **Assignee:** Developer
-  - **DependsOn:** TASK-006
+  - **DependsOn:** TASK-006b
   - **Triage Level:** STANDARD
-  - **ParallelGate:** [Build: pass (23 static pages), QA: pass (ui-taste-check clean, env-check clean), Tester: N/A, Security: N/A]
+  - **ParallelGate:** [Build: pass (23 static pages + /api/chat), QA: pass (ui-taste-check clean, env-check clean), Tester: N/A, Security: N/A]
   - **HumanCheckpoint:** pending
-  - **Artifacts:** `DESIGN.md`, `src/components/layout/Header.tsx`, `src/components/layout/Footer.tsx`, `src/components/layout/PageHeader.tsx`, `src/components/home/*`, `src/app/page.tsx`, `src/app/a-propos/page.tsx`, `src/app/expertise/*`, `src/app/contact/page.tsx`, `src/app/honoraires/page.tsx`, `src/app/actualites/*`, `public/images/*`, `docs/superpowers/plans/2026-10-03-sprint-3-ui-overhaul.md`, ADR-010
+  - **Artifacts:** `src/app/api/chat/route.ts`, `src/components/chat/ChatWidget.tsx`, ADR-011
 
 ### [ BACKLOG ]
 - **`TASK-007`**: Test Suite & Testing Guide — unit/integration tests, `docs/TESTING_GUIDE.md` (devos123)
   - **Assignee:** Tester
-  - **DependsOn:** TASK-006b
+  - **DependsOn:** TASK-011
   - **Triage Level:** STANDARD
 - **`TASK-008`**: Security Audit — OWASP Top 10, form handling, RGPD, dependency CVEs
   - **Assignee:** Security
-  - **DependsOn:** TASK-006b
+  - **DependsOn:** TASK-011
   - **Triage Level:** CRITICAL
 - **`TASK-009`**: Release & Deployment Prep — changelog, Vercel deploy plan, launch checklist
   - **Assignee:** Release Manager + DevOps
@@ -62,6 +62,9 @@
 - **`TASK-006`**: Implementation Sprint 2: Blog, Fees & Legal Pages — Blog index + 4 SSG article pages, Fee transparency (3 billing models), Mentions Légales, RGPD Privacy Policy, HTML Sitemap
   - **HumanCheckpoint:** approved (d8d5c7a)
   - **Artifacts:** `src/app/actualites/*`, `src/app/honoraires/*`, `src/app/mentions-legales/*`, `src/app/politique-confidentialite/*`, `src/app/plan-du-site/*`, `src/lib/data/articles.ts`, `src/components/blog/*`, ADR-009
+- **`TASK-006b`**: UI Overhaul: Professional Sections, Logo, Montserrat Font, Header Images & Nav Dropdown
+  - **HumanCheckpoint:** approved
+  - **Artifacts:** `DESIGN.md`, `src/components/layout/*`, `src/components/home/*`, `src/app/page.tsx`, `src/app/a-propos/*`, `src/app/expertise/*`, `src/app/contact/*`, `src/app/honoraires/*`, `src/app/actualites/*`, `public/images/*`, ADR-010
 
 ---
 
