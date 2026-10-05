@@ -117,6 +117,86 @@ export interface TranslationDictionary {
     successMessage: string;
     secrecyNotice: string;
   };
+  aboutPage: {
+    title: string;
+    subtitle: string;
+    breadcrumb: string;
+    bioTitle: string;
+    bioP1: string;
+    bioP2: string;
+    awardsTitle: string;
+    environmentTitle: string;
+    conferencesTitle: string;
+  };
+  expertisePage: {
+    title: string;
+    subtitle: string;
+    breadcrumb: string;
+    learnMore: string;
+    practices: {
+      slug: string;
+      title: string;
+      desc: string;
+      image: string;
+    }[];
+  };
+  expertiseDetail: {
+    breadcrumbHome: string;
+    breadcrumbExpertise: string;
+    frameworkTitle: string;
+    interventionsTitle: string;
+    methodologyTitle: string;
+    step: string;
+    sidebarTitle: string;
+    sidebarText: string;
+    sidebarCta: string;
+    sidebarUrgencyTitle: string;
+    sidebarUrgencyText: string;
+  };
+  feesPage: {
+    title: string;
+    subtitle: string;
+    breadcrumb: string;
+    conventionTitle: string;
+    conventionText: string;
+    conventionBullets: string[];
+    modelsTitle: string;
+    modelsSubtitle: string;
+    advantagesTitle: string;
+    rulesTitle: string;
+    rulesText: string;
+    ctaTitle: string;
+    ctaText: string;
+    ctaBtn: string;
+    fixedFeeTitle: string;
+    fixedFeeDesc: string;
+    fixedFeeAdvantages: string[];
+    hourlyTitle: string;
+    hourlyDesc: string;
+    hourlyAdvantages: string[];
+    successTitle: string;
+    successDesc: string;
+    successAdvantages: string[];
+  };
+  actualitesPage: {
+    title: string;
+    subtitle: string;
+    breadcrumb: string;
+    allArticles: string;
+    readMore: string;
+    minRead: string;
+    backToNews: string;
+  };
+  chatWidget: {
+    title: string;
+    subtitle: string;
+    greeting: string;
+    placeholder: string;
+    disclaimer: string;
+    bookCta: string;
+    voiceMode: string;
+    send: string;
+  };
   footer: {
     title: string;
     role: string;
@@ -319,6 +399,106 @@ export const translations: Record<Locale, TranslationDictionary> = {
       successMessage: "Votre demande a été transmise au cabinet. Me Cheynut ou un collaborateur prendra contact avec vous dans les plus brefs délais.",
       secrecyNotice: "Échanges protégés par le secret professionnel monégasque (Art. 308 CP)",
     },
+    aboutPage: {
+      title: "Le Cabinet",
+      subtitle: "Rigueur, Confiance et Excellence à Monaco",
+      breadcrumb: "Le Cabinet",
+      bioTitle: "Me Arnaud Cheynut",
+      bioP1: "Avocat-Défenseur inscrit au Tableau de l'Ordre des Avocats de Monaco, Me Arnaud Cheynut met son expertise au service d'une clientèle locale et internationale.",
+      bioP2: "Fort d'une solide expérience devant les juridictions de la Principauté, le cabinet intervient tant en conseil qu'en contentieux, avec une approche pragmatique et personnalisée pour chaque dossier.",
+      awardsTitle: "Nos Reconnaissances",
+      environmentTitle: "Notre Environnement",
+      conferencesTitle: "Conférences et Interventions",
+    },
+    expertisePage: {
+      title: "Domaines d'Expertise",
+      subtitle: "Conseil et Contentieux devant les Juridictions Monégasques",
+      breadcrumb: "Expertise",
+      learnMore: "En savoir plus →",
+      practices: [
+        { title: "Droit Pénal", slug: "droit-penal", image: "/images/headers/droit-penal.jpg", desc: "Défense pénale d'urgence, assistance en garde à vue et représentation devant les tribunaux répressifs monégasques." },
+        { title: "Droit Civil", slug: "droit-civil", image: "/images/headers/droit-civil.jpg", desc: "Responsabilité, contentieux contractuels et réparation des préjudices devant le Tribunal de Première Instance." },
+        { title: "Droit Commercial", slug: "droit-commercial", image: "/images/headers/droit-commercial.jpg", desc: "Accompagnement des sociétés (SAM, SARL), contrats d'affaires et résolution des litiges commerciaux." },
+        { title: "Droit de la Famille", slug: "droit-famille", image: "/images/headers/droit-famille.jpg", desc: "Divorces, séparations, successions internationales et gestion patrimoniale privée avec rigueur." },
+        { title: "Procédures d'Urgence", slug: "procedures-urgence", image: "/images/headers/procedures-urgence.jpg", desc: "Référés d'heure à heure, saisies conservatoires et mesures d'instruction d'urgence." },
+        { title: "Arbitrage", slug: "arbitrage", image: "/images/headers/arbitrage.jpg", desc: "Modes alternatifs de règlement des conflits et arbitrage commercial international." },
+        { title: "Droit Immobilier", slug: "droit-immobilier", image: "/images/headers/droit-immobilier.jpg", desc: "Baux d'habitation et commerciaux, copropriété, transactions et contentieux de la construction à Monaco." },
+      ],
+    },
+    expertiseDetail: {
+      breadcrumbHome: "Accueil",
+      breadcrumbExpertise: "Domaines d'Expertise",
+      frameworkTitle: "Cadre Juridique & Pratique Monégasque",
+      interventionsTitle: "Nos Domaines d'Intervention Clés",
+      methodologyTitle: "Notre Démarche Procédurale",
+      step: "Étape",
+      sidebarTitle: "Confier votre Dossier",
+      sidebarText: "Le Cabinet vous assiste avec réactivité, rigueur et stricte confidentialité à chaque étape de votre procédure.",
+      sidebarCta: "Prendre Rendez-vous",
+      sidebarUrgencyTitle: "Permanence d'Urgence 24/7",
+      sidebarUrgencyText: "Garde à vue, perquisition, référé d'urgence en Principauté de Monaco.",
+    },
+    feesPage: {
+      title: "Honoraires",
+      subtitle: "Transparence, Prévisibilité et Rigueur Déontologique",
+      breadcrumb: "Honoraires",
+      conventionTitle: "Convention d'Honoraires Préalable",
+      conventionText: "Conformément aux usages de l'Ordre des Avocats de Monaco et aux obligations déontologiques de la profession, Me Arnaud Cheynut remet systématiquement une convention d'honoraires écrite avant toute prise en charge d'un dossier. Ce document précise :",
+      conventionBullets: [
+        "Le périmètre exact et les objectifs de la mission confiée au Cabinet",
+        "Le mode de facturation retenu (forfait, taux horaire ou honoraire de résultat)",
+        "Les modalités de règlement et l'estimation prévisionnelle des frais de procédure et débours",
+        "L'application des règles de déontologie et du secret professionnel monégasque",
+      ],
+      modelsTitle: "Nos Modes de Facturation",
+      modelsSubtitle: "Trois modalités adaptées à la nature de chaque dossier et aux attentes de nos clients",
+      advantagesTitle: "Avantages :",
+      rulesTitle: "Cadre Déontologique & Secret Professionnel",
+      rulesText: "La fixation des honoraires de l'Avocat-Défenseur à Monaco est régie par la Loi n° 1.047 du 28 juillet 1982 et les règles professionnelles de l'Ordre des Avocats. Les honoraires tiennent compte de la difficulté de l'affaire, du temps consacré, des intérêts en jeu et de la notoriété du Cabinet.",
+      ctaTitle: "Besoin d'une estimation pour votre dossier ?",
+      ctaText: "Contactez le Cabinet pour un premier échange confidentiel et l'établissement d'une proposition d'honoraires sur mesure.",
+      ctaBtn: "Prendre Rendez-vous",
+      fixedFeeTitle: "Honoraire Forfaitaire",
+      fixedFeeDesc: "Un montant global est convenu avant toute intervention pour les missions dont le périmètre est clairement délimité : rédaction de contrats, constitution de sociétés, consultation juridique ponctuelle, assistance en garde à vue.",
+      fixedFeeAdvantages: [
+        "Prévisibilité totale des coûts pour le client",
+        "Adapté aux missions à périmètre défini",
+        "Montant fixé dans la convention d'honoraires préalable",
+      ],
+      hourlyTitle: "Facturation au Temps Passé",
+      hourlyDesc: "Le taux horaire est communiqué préalablement et appliqué au temps effectivement consacré au dossier. Un relevé détaillé des diligences est remis à chaque facturation. Ce mode est privilégié pour les contentieux dont la durée et la complexité sont difficilement prévisibles.",
+      hourlyAdvantages: [
+        "Transparence grâce au relevé détaillé des diligences",
+        "Adapté aux contentieux complexes ou évolutifs",
+        "Taux horaire fixé dès la convention initiale",
+      ],
+      successTitle: "Honoraire Complémentaire de Résultat",
+      successDesc: "En complément d'un honoraire de base (forfait ou temps passé), un honoraire additionnel proportionnel au résultat obtenu peut être convenu. Ce mode de rémunération est encadré par les règles déontologiques de l'Ordre des Avocats de Monaco et suppose un résultat effectivement atteint.",
+      successAdvantages: [
+        "Alignement des intérêts entre le Cabinet et le client",
+        "Encadré par les règles déontologiques de l'Ordre",
+        "Toujours complémentaire à un honoraire de base",
+      ],
+    },
+    actualitesPage: {
+      title: "Actualités",
+      subtitle: "Analyses juridiques et veille réglementaire en Principauté de Monaco",
+      breadcrumb: "Actualités",
+      allArticles: "Tous les Articles",
+      readMore: "Lire l'article →",
+      minRead: "min de lecture",
+      backToNews: "← Retour aux actualités",
+    },
+    chatWidget: {
+      title: "Assistant Virtuel — Cabinet Cheynut",
+      subtitle: "Disponible 24h/24 & 7j/7",
+      greeting: "Bonjour. Je suis l'assistant du Cabinet de Me Arnaud Cheynut. Comment puis-je vous renseigner aujourd'hui ?",
+      placeholder: "Posez votre question juridique...",
+      disclaimer: "Les réponses sont fournies à titre indicatif et ne constituent pas un conseil juridique formel.",
+      bookCta: "Prendre Rendez-vous",
+      voiceMode: "Mode vocal",
+      send: "Envoyer",
+    },
     footer: {
       title: "Cabinet Me Arnaud Cheynut",
       role: "Avocat-Défenseur près la Cour d'Appel de Monaco",
@@ -518,6 +698,106 @@ export const translations: Record<Locale, TranslationDictionary> = {
       successTitle: "Inquiry Sent Successfully",
       successMessage: "Your inquiry has been received by the firm. Me Cheynut or an associate will respond to you shortly.",
       secrecyNotice: "All exchanges protected by Monegasque professional secrecy (Art. 308 CP)",
+    },
+    aboutPage: {
+      title: "The Firm",
+      subtitle: "Rigor, Trust and Legal Excellence in Monaco",
+      breadcrumb: "The Firm",
+      bioTitle: "Me Arnaud Cheynut",
+      bioP1: "Admitted as an Avocat-Défenseur to the Monaco Bar Association, Me Arnaud Cheynut provides top-tier legal advocacy and counsel to domestic and international clients.",
+      bioP2: "With deep-seated courtroom experience before Monegasque jurisdictions, the firm handles both strategic advisory and complex litigation with an exacting, tailored approach to every matter.",
+      awardsTitle: "Our Recognitions",
+      environmentTitle: "Our Environment",
+      conferencesTitle: "Conferences & Public Speaking",
+    },
+    expertisePage: {
+      title: "Practice Areas",
+      subtitle: "Strategic Counsel & Courtroom Defense in Monaco",
+      breadcrumb: "Practice Areas",
+      learnMore: "Learn More →",
+      practices: [
+        { title: "Criminal Defense", slug: "droit-penal", image: "/images/headers/droit-penal.jpg", desc: "Urgent criminal defense, 24/7 custody assistance, and trial representation before Monegasque penal courts." },
+        { title: "Civil Litigation", slug: "droit-civil", image: "/images/headers/droit-civil.jpg", desc: "Contract disputes, tort liability, damages claims, and representation before the Court of First Instance." },
+        { title: "Commercial & Corporate", slug: "droit-commercial", image: "/images/headers/droit-commercial.jpg", desc: "Corporate guidance for Monegasque entities (SAM, SARL), commercial contracts, and shareholder dispute resolution." },
+        { title: "Family Law & Private Wealth", slug: "droit-famille", image: "/images/headers/droit-famille.jpg", desc: "High-net-worth divorce, international estate succession, child custody, and private family asset protection." },
+        { title: "Emergency Injunctions", slug: "procedures-urgence", image: "/images/headers/procedures-urgence.jpg", desc: "Hour-by-hour summary proceedings, conservatory asset freezes, and emergency judicial measures." },
+        { title: "Arbitration & ADR", slug: "arbitrage", image: "/images/headers/arbitrage.jpg", desc: "Alternative dispute resolution, domestic and international commercial arbitration proceedings." },
+        { title: "Monegasque Real Estate Law", slug: "droit-immobilier", image: "/images/headers/droit-immobilier.jpg", desc: "Commercial & residential leases, co-ownership regulations, acquisitions, and construction litigation in Monaco." },
+      ],
+    },
+    expertiseDetail: {
+      breadcrumbHome: "Home",
+      breadcrumbExpertise: "Practice Areas",
+      frameworkTitle: "Monegasque Legal Framework & Practice",
+      interventionsTitle: "Key Areas of Intervention",
+      methodologyTitle: "Our Procedural Methodology",
+      step: "Step",
+      sidebarTitle: "Entrust Your Legal Matter",
+      sidebarText: "The firm assists you with responsiveness, rigor, and absolute confidentiality at every stage of your proceeding.",
+      sidebarCta: "Book a Consultation",
+      sidebarUrgencyTitle: "24/7 Emergency Line",
+      sidebarUrgencyText: "Police custody, searches, urgent summary proceedings in the Principality of Monaco.",
+    },
+    feesPage: {
+      title: "Fees & Billing",
+      subtitle: "Transparency, Predictability and Strict Professional Ethics",
+      breadcrumb: "Fees",
+      conventionTitle: "Prior Written Fee Agreement",
+      conventionText: "In accordance with the standards of the Monaco Bar Association and professional conduct rules, Me Arnaud Cheynut systematically issues a prior written fee agreement before accepting any engagement. This agreement outlines:",
+      conventionBullets: [
+        "The precise scope and strategic objectives of the engagement",
+        "The chosen billing arrangement (fixed fee, hourly rate, or success fee)",
+        "Payment terms, anticipated court costs, disbursements, and registration fees",
+        "The application of Monegasque professional secrecy and ethics regulations",
+      ],
+      modelsTitle: "Our Billing Arrangements",
+      modelsSubtitle: "Three billing models tailored to the nature of your case and your specific requirements",
+      advantagesTitle: "Key Benefits:",
+      rulesTitle: "Ethical Framework & Professional Privilege",
+      rulesText: "The determination of legal fees for an Avocat-Défenseur in Monaco is governed by Law no. 1.047 of July 28, 1982, and the rules of the Monaco Bar Association. Fees reflect the complexity of the matter, time invested, the financial stakes, and the firm's specialized expertise.",
+      ctaTitle: "Need an Estimate for Your Legal Matter?",
+      ctaText: "Contact the firm for a confidential initial review and a customized fee proposal.",
+      ctaBtn: "Book a Consultation",
+      fixedFeeTitle: "Fixed Fee",
+      fixedFeeDesc: "A lump-sum fee agreed in advance for engagements with a clearly defined scope: contract drafting, company formation, targeted legal consultations, and emergency police custody defense.",
+      fixedFeeAdvantages: [
+        "Total cost predictability for the client",
+        "Ideal for engagements with well-defined parameters",
+        "Amount explicitly fixed in the prior written fee agreement",
+      ],
+      hourlyTitle: "Hourly Rate",
+      hourlyDesc: "The hourly rate is specified in advance and billed for time actually dedicated to your matter. A detailed breakdown of all actions is provided with every invoice. This method is standard for complex litigation with evolving timelines.",
+      hourlyAdvantages: [
+        "Full transparency with itemized diligence reports",
+        "Well suited for complex or evolving dispute proceedings",
+        "Hourly rate agreed in the initial engagement terms",
+      ],
+      successTitle: "Complementary Success Fee",
+      successDesc: "In addition to a base fee (fixed or hourly), an additional fee contingent on achieved results may be agreed upon. This structure adheres strictly to the ethical rules of the Monaco Bar and requires a demonstrable successful outcome.",
+      successAdvantages: [
+        "Direct alignment of interests between client and firm",
+        "Strictly supervised by Monaco Bar Association rules",
+        "Always structured as an addition to a base fee",
+      ],
+    },
+    actualitesPage: {
+      title: "Legal News & Insights",
+      subtitle: "Legal analysis and regulatory updates in the Principality of Monaco",
+      breadcrumb: "News",
+      allArticles: "All Articles",
+      readMore: "Read Article →",
+      minRead: "min read",
+      backToNews: "← Back to News",
+    },
+    chatWidget: {
+      title: "Virtual Assistant — Cabinet Cheynut",
+      subtitle: "Available 24/7",
+      greeting: "Hello. I am the virtual assistant of Me Arnaud Cheynut's law firm. How may I assist you today?",
+      placeholder: "Ask your legal question...",
+      disclaimer: "Information provided for informational purposes only; does not constitute formal legal counsel.",
+      bookCta: "Book a Consultation",
+      voiceMode: "Voice mode",
+      send: "Send",
     },
     footer: {
       title: "Cabinet Me Arnaud Cheynut",

@@ -3,10 +3,11 @@
 > This file is maintained by the Orchestrator agent. It is updated at each phase transition to preserve context across long sessions.
 
 ## Current Task
-- **Task:** Full Bilingual i18n Support (FR/EN), Contact Email Addition & Tablet/Mobile Responsiveness
+- **Task:** Site-Wide End-to-End Bilingual Translation & Localization (FR/EN)
 - **Branch:** main
 - **Triage Level:** STANDARD
-- **Status:** Implemented dynamic language switcher and complete bilingual dictionaries (French & English) across Navigation, Hero, About, Practice Areas, Stats, Methodology Timeline, Contact Page, and Footer. Added `arnaud@arnaudcheynut.com` directly beneath `contact@arnaudcheynut.com` on the Contact page and in the Footer. Enhanced tablet (768px-1024px) and mobile responsiveness (Header breakpoint, drawer, Hero typography, touch targets, and image containers). Static prerendering (28/28 routes) and Dev-OS quality gates passed 100%.
+- **Status:** Expanded bilingual translation system across all remaining pages: The Firm (/a-propos), Practice Areas index (/expertise), all individual practice area detail pages (/expertise/[slug]), Fees & billing models (/honoraires), Legal News index (/actualites), News article detail pages (/actualites/[slug]), Sitemap (/plan-du-site), PageHeader dynamic breadcrumbs, and ChatWidget AI Assistant (French/English speech synthesis, recognition, text prompts, and UI). All 28 static routes compiled and prerendered cleanly.
+
 
 ## Project
 **Law Firm Website — Me Arnaud Cheynut** (Avocat-Défenseur, Ordre des Avocats de Monaco)
